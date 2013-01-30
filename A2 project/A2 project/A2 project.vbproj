@@ -105,6 +105,12 @@
     <Compile Include="settings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Student.Designer.vb">
+      <DependentUpon>Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Day settings.resx">
@@ -121,6 +127,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="settings.resx">
       <DependentUpon>settings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Student.resx">
+      <DependentUpon>Student.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
