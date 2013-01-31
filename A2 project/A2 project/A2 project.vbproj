@@ -49,6 +49,8 @@
     <OptionInfer>On</OptionInfer>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
@@ -58,6 +60,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Import Include="Microsoft.VisualBasic" />
@@ -99,16 +102,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <Compile Include="settings.Designer.vb">
-      <DependentUpon>settings.vb</DependentUpon>
+    <Compile Include="results.Designer.vb">
+      <DependentUpon>results.vb</DependentUpon>
     </Compile>
-    <Compile Include="settings.vb">
+    <Compile Include="results.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="see results.Designer.vb">
+      <DependentUpon>see results.vb</DependentUpon>
+    </Compile>
+    <Compile Include="see results.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start form.Designer.vb">
+      <DependentUpon>Start form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Start form.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Student.Designer.vb">
       <DependentUpon>Student.vb</DependentUpon>
     </Compile>
     <Compile Include="Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="teacher av form.Designer.vb">
+      <DependentUpon>teacher av form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="teacher av form.vb">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
@@ -125,11 +146,20 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <EmbeddedResource Include="settings.resx">
-      <DependentUpon>settings.vb</DependentUpon>
+    <EmbeddedResource Include="results.resx">
+      <DependentUpon>results.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="see results.resx">
+      <DependentUpon>see results.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Start form.resx">
+      <DependentUpon>Start form.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Student.resx">
       <DependentUpon>Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="teacher av form.resx">
+      <DependentUpon>teacher av form.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
