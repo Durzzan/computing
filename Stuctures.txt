@@ -1,0 +1,67 @@
+'structures
+
+'Student structure
+
+public structure StudRec
+	public StudNO as integer
+	public StudID as integer
+	public Forename as string
+	public Surname as string
+	public Year as byte
+	public Form as string
+	public Email as string
+	public PhoneNO as string
+end structure
+
+'staff structure
+
+public structure StaffRec
+	public StaffNO as integer
+	public Forename as string
+	public Surname as string
+	public Email as string
+	public admin as boolean
+end structure
+
+'Student availabity structure
+
+public structure StudAvRec
+	public Appointment as integer
+	public StudNo as integer
+	public Day as byte
+	public available as boolean
+end structure
+
+'staff availability structure
+
+public structure StaffAvRec
+	public Appointment as integer
+	public StaffNO as integer
+	Public Day as byte
+	public Available as boolean
+end structure 
+
+'day stucture
+
+public structure DayRec
+	public Day as byte
+	public Start as date
+	public End as date
+	public length as byte
+end structure
+
+'appointments structure
+
+public structure AppointmentsRec
+	public Day as byte
+	public LessonNO as integer
+	public Appointment as byte
+end structure
+
+'Lesson structure
+
+public structure LessonRec
+	public LessonNO as integer
+	public StudNO as integer
+	public StaffNO as integer
+end structure
