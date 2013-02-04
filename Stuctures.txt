@@ -8,9 +8,6 @@ public structure StudRec
 	public Forename as string
 	public Surname as string
 	public Year as byte
-	public Form as string
-	public Email as string
-	public PhoneNO as string
 end structure
 
 'staff structure
@@ -19,7 +16,6 @@ public structure StaffRec
 	public StaffNO as integer
 	public Forename as string
 	public Surname as string
-	public Email as string
 	public admin as boolean
 end structure
 
@@ -29,6 +25,7 @@ public structure StudAvRec
 	public Appointment as integer
 	public StudNo as integer
 	public Day as byte
+	public Block as byte
 	public available as boolean
 end structure
 
@@ -38,6 +35,7 @@ public structure StaffAvRec
 	public Appointment as integer
 	public StaffNO as integer
 	Public Day as byte
+	public Block as byte
 	public Available as boolean
 end structure 
 
