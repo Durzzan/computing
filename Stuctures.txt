@@ -44,7 +44,7 @@ end structure
 'day stucture
 
 public structure DayRec
-	public Day as byte
+	public DayNO as byte
 	public Start as date
 	public End as date
 	public length as byte
@@ -53,9 +53,9 @@ end structure
 'appointments structure
 
 public structure AppointmentsRec
-	public Day as byte
+	public DayNO as byte
 	public LessonNO as integer
-	public Appointment as byte
+	public AppointmentNO as byte
 end structure
 
 'Lesson structure
@@ -65,3 +65,41 @@ public structure LessonRec
 	public StudNO as integer
 	public StaffNO as integer
 end structure
+
+'variables
+
+'student variables
+
+public student as StudRec = nothing
+public Nstudents as integer = -1 
+
+'staff variables
+
+public Staff as StaffRec = nothing
+public Nstaff as integer = -1
+
+'student availability variables
+
+public StudAv as StudAvRec = nothing
+public NStudAv as integer = -1
+
+'staff availablitiy variables
+
+public StaffAv as StaffAvRec = nothing
+public NStaffAv as integer = -1
+
+'Day variables
+
+public Day as DayRec = nothing
+public NDay as integer = -1
+
+'Appointment variables
+
+public Appointment as AppointmentRec = nothing
+public NAppointment as integer = -1
+
+'Lesson variables
+
+Public Lesson as LessonRec = nothing
+public Nlesson as integer = -1
+
