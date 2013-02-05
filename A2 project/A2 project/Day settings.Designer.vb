@@ -34,6 +34,7 @@ Partial Class Day_settings
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
         Me.ComboBox4 = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'CheckBox1
@@ -143,11 +144,21 @@ Partial Class Day_settings
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "day number"
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(239, 336)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(76, 24)
+        Me.Button1.TabIndex = 18
+        Me.Button1.Text = "back"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
         'Day_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(374, 374)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ComboBox4)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ComboBox3)
@@ -178,4 +189,5 @@ Partial Class Day_settings
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
     Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Button1 As System.Windows.Forms.Button
 End Class

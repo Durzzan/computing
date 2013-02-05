@@ -24,6 +24,7 @@ Partial Class see_results
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.results = New System.Windows.Forms.ListBox()
+        Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -44,11 +45,21 @@ Partial Class see_results
         Me.results.Size = New System.Drawing.Size(163, 199)
         Me.results.TabIndex = 2
         '
+        'Button6
+        '
+        Me.Button6.Location = New System.Drawing.Point(234, 273)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(85, 28)
+        Me.Button6.TabIndex = 8
+        Me.Button6.Text = "back"
+        Me.Button6.UseVisualStyleBackColor = True
+        '
         'see_results
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(331, 316)
+        Me.Controls.Add(Me.Button6)
         Me.Controls.Add(Me.results)
         Me.Controls.Add(Me.Label1)
         Me.Name = "see_results"
@@ -59,4 +70,5 @@ Partial Class see_results
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents results As System.Windows.Forms.ListBox
+    Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class
