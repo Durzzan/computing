@@ -32,12 +32,14 @@ Partial Class Day_settings
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.ComboBox3 = New System.Windows.Forms.ComboBox()
+        Me.ComboBox4 = New System.Windows.Forms.ComboBox()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SuspendLayout()
         '
         'CheckBox1
         '
         Me.CheckBox1.AutoSize = True
-        Me.CheckBox1.Location = New System.Drawing.Point(184, 107)
+        Me.CheckBox1.Location = New System.Drawing.Point(184, 159)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(56, 17)
         Me.CheckBox1.TabIndex = 0
@@ -47,7 +49,7 @@ Partial Class Day_settings
         'Label1
         '
         Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(53, 107)
+        Me.Label1.Location = New System.Drawing.Point(53, 159)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(97, 13)
         Me.Label1.TabIndex = 1
@@ -56,7 +58,7 @@ Partial Class Day_settings
         'CheckBox2
         '
         Me.CheckBox2.AutoSize = True
-        Me.CheckBox2.Location = New System.Drawing.Point(184, 131)
+        Me.CheckBox2.Location = New System.Drawing.Point(184, 183)
         Me.CheckBox2.Name = "CheckBox2"
         Me.CheckBox2.Size = New System.Drawing.Size(62, 17)
         Me.CheckBox2.TabIndex = 2
@@ -76,7 +78,7 @@ Partial Class Day_settings
         'ComboBox1
         '
         Me.ComboBox1.FormattingEnabled = True
-        Me.ComboBox1.Location = New System.Drawing.Point(155, 163)
+        Me.ComboBox1.Location = New System.Drawing.Point(155, 215)
         Me.ComboBox1.Name = "ComboBox1"
         Me.ComboBox1.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox1.TabIndex = 10
@@ -84,7 +86,7 @@ Partial Class Day_settings
         'ComboBox2
         '
         Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(155, 216)
+        Me.ComboBox2.Location = New System.Drawing.Point(155, 268)
         Me.ComboBox2.Name = "ComboBox2"
         Me.ComboBox2.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox2.TabIndex = 11
@@ -92,7 +94,7 @@ Partial Class Day_settings
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(52, 224)
+        Me.Label3.Location = New System.Drawing.Point(52, 276)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(47, 13)
         Me.Label3.TabIndex = 12
@@ -101,7 +103,7 @@ Partial Class Day_settings
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(53, 171)
+        Me.Label4.Location = New System.Drawing.Point(53, 223)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(49, 13)
         Me.Label4.TabIndex = 13
@@ -124,11 +126,30 @@ Partial Class Day_settings
         Me.ComboBox3.Size = New System.Drawing.Size(121, 21)
         Me.ComboBox3.TabIndex = 15
         '
+        'ComboBox4
+        '
+        Me.ComboBox4.FormattingEnabled = True
+        Me.ComboBox4.Location = New System.Drawing.Point(155, 107)
+        Me.ComboBox4.Name = "ComboBox4"
+        Me.ComboBox4.Size = New System.Drawing.Size(121, 21)
+        Me.ComboBox4.TabIndex = 17
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(53, 110)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(62, 13)
+        Me.Label6.TabIndex = 16
+        Me.Label6.Text = "day number"
+        '
         'Day_settings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(374, 374)
+        Me.Controls.Add(Me.ComboBox4)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.ComboBox3)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Label4)
@@ -155,4 +176,6 @@ Partial Class Day_settings
     Friend WithEvents Label4 As System.Windows.Forms.Label
     Friend WithEvents Label5 As System.Windows.Forms.Label
     Friend WithEvents ComboBox3 As System.Windows.Forms.ComboBox
+    Friend WithEvents ComboBox4 As System.Windows.Forms.ComboBox
+    Friend WithEvents Label6 As System.Windows.Forms.Label
 End Class

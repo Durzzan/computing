@@ -12,4 +12,8 @@
         Dim parts() As String = Split(My.User.Name, "\")
         Label2.Text = parts(1)
     End Sub
+
+    Private Sub Start_form_Load(sender As System.Object, e As System.EventArgs) Handles MyBase.Load
+
+    End Sub
 End Class
