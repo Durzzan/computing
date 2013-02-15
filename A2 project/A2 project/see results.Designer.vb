@@ -23,7 +23,7 @@ Partial Class see_results
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.results = New System.Windows.Forms.ListBox()
+        Me.lst1 = New System.Windows.Forms.ListBox()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
@@ -37,13 +37,13 @@ Partial Class see_results
         Me.Label1.TabIndex = 1
         Me.Label1.Text = "title"
         '
-        'results
+        'lst1
         '
-        Me.results.FormattingEnabled = True
-        Me.results.Location = New System.Drawing.Point(45, 102)
-        Me.results.Name = "results"
-        Me.results.Size = New System.Drawing.Size(163, 199)
-        Me.results.TabIndex = 2
+        Me.lst1.FormattingEnabled = True
+        Me.lst1.Location = New System.Drawing.Point(45, 102)
+        Me.lst1.Name = "lst1"
+        Me.lst1.Size = New System.Drawing.Size(163, 199)
+        Me.lst1.TabIndex = 2
         '
         'Button6
         '
@@ -60,7 +60,7 @@ Partial Class see_results
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(331, 316)
         Me.Controls.Add(Me.Button6)
-        Me.Controls.Add(Me.results)
+        Me.Controls.Add(Me.lst1)
         Me.Controls.Add(Me.Label1)
         Me.Name = "see_results"
         Me.Text = "see_results"
@@ -69,6 +69,6 @@ Partial Class see_results
 
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
-    Friend WithEvents results As System.Windows.Forms.ListBox
+    Friend WithEvents lst1 As System.Windows.Forms.ListBox
     Friend WithEvents Button6 As System.Windows.Forms.Button
 End Class
