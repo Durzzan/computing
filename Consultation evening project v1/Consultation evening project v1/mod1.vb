@@ -107,5 +107,91 @@
     Public Lesson As LessonRec = Nothing
     Public Nlesson As Integer = -1
 
+    'reading csv files
 
+    'imports the students into thier csv file
+    Public Sub ImportStudents()
+        'opnes up file reader and sets it to read students.csv the file in which the student data is stored
+        Dim TextFileReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("students.csv")
+        TextFileReader.TextFieldType = FileIO.FieldType.Delimited
+        TextFileReader.SetDelimiters(",")
+
+        Dim CurrentRow As String()
+        Dim OnRec As Integer = 0
+        Dim FileNum As Integer = FreeFile()
+        'opens file
+        FileOpen(FileNum, "Student.csv", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(student))
+
+        While Not TextFileReader.EndOfData
+            Try
+                CurrentRow = TextFileReader.ReadFields()
+                If Not CurrentRow Is Nothing Then
+                    OnRec = OnRec + 1
+                    'puts data into the studet structure
+                    With student
+                        .studNO = CurrentRow(0)
+                        .studID = CurrentRow(1)
+                        .Surname = CurrentRow(2)
+                        .Forename = CurrentRow(3)
+                        .Year = CurrentRow(4)
+                    End With
+                    'puts data from the student structure into the student csv file
+                    FilePut(FileNum, student, OnRec)
+                End If
+            Catch ex As  _
+                Microsoft.VisualBasic.FileIO.MalformedLineException
+                'if error then error message is sent and try ends
+                MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+            End Try
+        End While
+        'message box is sent saying that the students are imported and how many
+        MsgBox(NStudents & " students imported")
+        'file is closed
+        FileClose(FileNum)
+        TextFileReader.Dispose()
+    End Sub
+
+    'imports staff into thier csv file
+    Public Sub ImportStaff()
+        'opens microsoft file reader and sets the file to be read as staffdata.csv
+        Dim TextFileReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("tutor.csv")
+        TextFileReader.TextFieldType = FileIO.FieldType.Delimited
+        TextFileReader.SetDelimiters(",")
+
+        Dim CurrentRow As String()
+        Dim OnRec As Integer = 0
+        Dim FileNum As Integer = FreeFile()
+        'opens the file
+        FileOpen(FileNum, "Staff.csv", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Staff))
+
+        While Not TextFileReader.EndOfData
+            Try
+                CurrentRow = TextFileReader.ReadFields()
+                If Not CurrentRow Is Nothing Then
+                    OnRec = OnRec + 1
+                    'puts data into file structure staff
+                    With staff
+                        .staffNO = CurrentRow(0)
+                        .admin = CurrentRow(1)
+                        .staffID = CurrentRow(2)
+                        .Forename = CurrentRow(3)
+                        .Surname = CurrentRow(4)
+                        .DOB = CurrentRow(5)
+                        .password = Encrypt("db" & Format(.DOB, "ddMMyyyy"))
+                    End With
+                    'puts data in file structure staff into the staff dat file
+                    FilePut(FileNum, staff, OnRec)
+                End If
+            Catch ex As  _
+            Microsoft.VisualBasic.FileIO.MalformedLineException
+                'error in text sends error message and ends try
+                MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+            End Try
+        End While
+        Nstaff = OnRec
+        'sends message box notifying student that staff have been imported and how many have been
+        MsgBox(Nstaff & " Staff imported")
+        FileClose(FileNum)
+        TextFileReader.Dispose()
+    End Sub
 End Module

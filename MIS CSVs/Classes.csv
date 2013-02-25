@@ -1,0 +1,452 @@
+1,AC-1-A1,Accounting AS
+2,AC-2-C1,Accounting A2
+3,AR-1-BC,Art and Design AS
+4,AR-1-CB,Art and Design AS
+5,AR-1-DE,Art and Design AS
+6,AR-1-ED,Art and Design AS
+7,AR-1-F1,Art and Design AS
+8,AR-2-AF,Art and Design A2
+9,AR-2-BC,Art and Design A2
+10,AR-2-DE,Art and Design A2
+11,BA-1-C1,Business Applied AS
+12,BA-2-F1,Business Applied A2
+13,BA-2-G1,Business Applied A2
+14,BI-1-A1,Biology AS
+15,BI-1-A2,Biology AS
+16,BI-1-B1,Biology AS
+17,BI-1-B2,Biology AS
+18,BI-1-C1,Biology AS
+19,BI-1-C2,Biology AS
+20,BI-1-D1,Biology AS
+21,BI-1-D2,Biology AS
+22,BI-1-E1,Biology AS
+23,BI-1-E2,Biology AS
+24,BI-1-G1,Biology AS
+25,BI-2-A1,Biology A2
+26,BI-2-B1,Biology A2
+27,BI-2-C1,Biology A2
+28,BI-2-D1,Biology A2
+29,BI-2-E1,Biology A2
+30,BI-2-F1,Biology A2
+31,BI-2-F2,Biology A2
+32,BI-2-G1,Biology A2
+33,BS-1-A1,Business Studies AS
+34,BS-1-B1,Business Studies AS
+35,BS-1-D1,Business Studies AS
+36,BS-1-E1,Business Studies AS
+37,BS-2-A1,Business Studies A2
+38,BS-2-D1,Business Studies A2
+39,BS-2-E1,Business Studies A2
+40,CH-1-A1,Chemistry AS
+41,CH-1-B1,Chemistry AS
+42,CH-1-C1,Chemistry AS
+43,CH-1-D1,Chemistry AS
+44,CH-1-E1,Chemistry AS
+45,CH-1-E2,Chemistry AS
+46,CH-1-G1,Chemistry AS
+47,CH-2-A1,Chemistry A2
+48,CH-2-BG,Chemistry A2
+49,CH-2-C1,Chemistry A2
+50,CH-2-D1,Chemistry A2
+51,CH-2-F1,Chemistry A2
+52,CL-1-B1,Classical Civilisation AS
+53,CL-1-D1,Classical Civilisation AS
+54,CL-2-C1,Classical Civilisation A2
+55,CL-2-E1,Classical Civilisation A2
+56,CO-1-A1,Computing AS
+57,CO-1-B1,Computing AS
+58,CO-1-E1,Computing AS
+59,CO-2-C1,Computing A2
+60,CO-2-D1,Computing A2
+61,CR-1-A1,Critical Thinking AS
+62,CR-1-A2,Critical Thinking AS
+63,CR-1-F1,Critical Thinking AS
+64,CR-1-G1,Critical Thinking AS
+65,DG-1-DE,Graphics AS
+66,DG-1-DE,Graphics AS
+67,DG-1-ED,Graphics AS
+68,DG-1-FA,Graphics AS
+69,DG-2-AF,Graphics A2
+70,DG-2-BC,Graphics A2
+71,DG-2-CB,Graphics A2
+72,DG-2-ED,Graphics A2
+73,DP-1-BC,Design & Technology Product AS
+74,DP-1-DE,Design & Technology Product AS
+75,DP-2-AF,Design & Technology Product A2
+76,DP-2-DE,Design & Technology Product A2
+77,DT-1-AF,Design & Technology Textiles AS
+78,DT-1-BC,Design & Technology Textiles AS
+79,DT-2-AF,Design & Technology Textiles A2
+80,DT-2-BC,Design & Technology Textiles A2
+81,EB-1-B1,English Combined AS
+82,EB-1-C1,English Combined AS
+83,EB-1-C2,English Combined AS
+84,EB-1-D1,English Combined AS
+85,EB-1-G1,English Combined AS
+86,EB-2-A1,English Combined A2
+87,EB-2-E1,English Combined A2
+88,EB-2-F1,English Combined A2
+89,EC-1-D1,Economics AS
+90,EC-1-E1,Economics AS
+91,EC-2-A1,Economics A2
+92,EG-1-A1,English GCSE
+93,EG-1-E1,English GCSE
+94,EL-1-D1,English Literature AS
+95,EL-1-E1,English Literature AS
+96,EL-1-G1,English Literature AS
+97,EL-2-A1,English Literature A2
+98,EL-2-B1,English Literature A2
+99,EL-2-D1,English Literature A2
+100,EL-2-E1,English Literature A2
+101,EN-1-B1,English Language AS
+102,EN-1-D1,English Language AS
+103,EN-1-F1,English Language AS
+104,EN-1-G1,English Language AS
+105,EN-1-G2,English Language AS
+106,EN-2-A1,English Language A2
+107,EN-2-B1,English Language A2
+108,EN-2-C1,English Language A2
+109,EN-2-F1,English Language A2
+110,EP-2-A1,Extended Project
+111,EP-2-A2,Extended Project
+112,EP-2-B1,Extended Project
+113,EP-2-C1,Extended Project
+114,EP-2-C2,Extended Project
+115,EP-2-D1,Extended Project
+116,EP-2-D2,Extended Project
+117,EP-2-E1,Extended Project
+118,EP-2-F1,Extended Project
+119,EP-2-G1,Extended Project
+120,EP-2-G2,Extended Project
+121,EP-2-G3,Extended Project
+122,ES-1-A1,Environmental Science AS
+123,ES-1-G1,Environmental Science AS
+124,ES-2-BC,Environmental Science A2
+125,ES-2-F1,Environmental Science A2
+126,EX-1-D1,Electronics AS
+127,EX-1-G1,Electronics AS
+128,EX-2-E1,Electronics A2
+129,FG-1-D1,Film Studies GCSE
+130,FR-1-B1,French AS
+131,FR-1-C1,French AS
+132,FR-2-D1,French A2
+133,FR-2-E1,French A2
+134,FS-1-E1,Film Studies AS
+135,FS-1-G1,Film Studies AS
+136,FS-2-F1,Film Studies A2
+137,GE-1-ED,Geology AS
+138,GE-2-BC,Geology A2
+139,GG-1-A1,Geography AS
+140,GG-1-B1,Geography AS
+141,GG-1-C1,Geography AS
+142,GG-1-D1,Geography AS
+143,GG-1-DE,Geography AS
+144,GG-1-E1,Geography AS
+145,GG-1-G1,Geography AS
+146,GG-2-A1,Geography A2
+147,GG-2-B1,Geography A2
+148,GG-2-C1,Geography A2
+149,GG-2-D1,Geography A2
+150,GG-2-E1,Geography A2
+151,GM-1-G1,German AS
+152,GM-2-A1,German A2
+153,GS-1-A1,General Studies AS
+154,GS-1-A2,General Studies AS
+155,GS-1-A3,General Studies AS
+156,GS-1-A4,General Studies AS
+157,GS-1-A5,General Studies AS
+158,GS-1-A6,General Studies AS
+159,GS-1-A8,General Studies AS
+160,GS-1-B1,General Studies AS
+161,GS-1-B2,General Studies AS
+162,GS-1-B3,General Studies AS
+163,GS-1-B4,General Studies AS
+164,GS-1-B5,General Studies AS
+165,GS-1-B6,General Studies AS
+166,GS-1-C1,General Studies AS
+167,GS-1-C2,General Studies AS
+168,GS-1-C3,General Studies AS
+169,GS-1-C4,General Studies AS
+170,GS-1-C5,General Studies AS
+171,GS-1-C6,General Studies AS
+172,GS-1-D1,General Studies AS
+173,GS-1-D3,General Studies AS
+174,GS-1-D4,General Studies AS
+175,GS-1-D5,General Studies AS
+176,GS-1-D6,General Studies AS
+177,GS-1-E1,General Studies AS
+178,GS-1-E3,General Studies AS
+179,GS-1-E6,General Studies AS
+180,GS-1-E7,General Studies AS
+181,GS-1-E8,General Studies AS
+182,GS-1-F1,General Studies AS
+183,GS-1-F2,General Studies AS
+184,GS-1-G1,General Studies AS
+185,GS-1-G2,General Studies AS
+186,GS-1-G3,General Studies AS
+187,GS-1-G4,General Studies AS
+188,GS-1-G5,General Studies AS
+189,GS-2-B1,General Studies A2
+190,GS-2-F1,General Studies A2
+191,GS-2-G1,General Studies A2
+192,GS-2-G2,General Studies A2
+193,HG-1-B1,Health and Social Care GCSE
+194,HI-1-A1,History AS
+195,HI-1-B1,History AS
+196,HI-1-C1,History AS
+197,HI-1-D1,History AS
+198,HI-1-E1,History AS
+199,HI-1-F1,History AS
+200,HI-1-G1,History AS
+201,HI-2-A1,History A2
+202,HI-2-B1,History A2
+203,HI-2-C1,History A2
+204,HI-2-D1,History A2
+205,HI-2-E1,History A2
+206,HI-2-G1,History A2
+207,HS-1-A1,Health and Social Care Applied AS
+208,HS-1-B1,Health and Social Care Applied AS
+209,HS-1-C1,Health and Social Care Applied AS
+210,HS-1-D1,Health and Social Care Applied AS
+211,HS-1-E1,Health and Social Care Applied AS
+212,HS-2-A1,Health and Social Care Applied A2
+213,HS-2-G1,Health and Social Care Applied A2
+214,I1-1-A1,IT for Learning Level 2 (S1)
+215,I1-1-A2,IT for Learning Level 2 (S1)
+216,I1-1-B1,IT for Learning Level 2 (S1)
+217,I1-1-C1,IT for Learning Level 2 (S1)
+218,I1-1-C2,IT for Learning Level 2 (S1)
+219,I1-1-D1,IT for Learning Level 2 (S1)
+220,I1-1-E1,IT for Learning Level 2 (S1)
+221,I1-1-E2,IT for Learning Level 2 (S1)
+222,I1-1-E3,IT for Learning Level 2 (S1)
+223,I1-1-F1,IT for Learning Level 2 (S1)
+224,I1-1-G1,IT for Learning Level 2 (S1)
+225,I2-1-A1,IT for Learning Level 2 (S2)
+226,I2-1-B1,IT for Learning Level 2 (S2)
+227,I2-1-B2,IT for Learning Level 2 (S2)
+228,I2-1-C1,IT for Learning Level 2 (S2)
+229,I2-1-C2,IT for Learning Level 2 (S2)
+230,I2-1-D2,IT for Learning Level 2 (S2)
+231,I2-1-E2,IT for Learning Level 2 (S2)
+232,I2-1-F1,IT for Learning Level 2 (S2)
+233,I2-1-G1,IT for Learning Level 2 (S2)
+234,I3-1-A1,IT for Learning Enhanced Level 3
+235,I3-1-A2,IT for Learning Enhanced Level 3
+236,I3-1-B2,IT for Learning Enhanced Level 3
+237,I3-1-C1,IT for Learning Enhanced Level 3
+238,I3-1-C2,IT for Learning Enhanced Level 3
+239,I3-1-C3,IT for Learning Enhanced Level 3
+240,I3-1-D1,IT for Learning Enhanced Level 3
+241,I3-1-D2,IT for Learning Enhanced Level 3
+242,I3-1-E1,IT for Learning Enhanced Level 3
+243,I3-1-E2,IT for Learning Enhanced Level 3
+244,I3-1-F1,IT for Learning Enhanced Level 3
+245,I3-1-F2,IT for Learning Enhanced Level 3
+246,I3-1-G1,IT for Learning Enhanced Level 3
+247,I3-1-G2,IT for Learning Enhanced Level 3
+248,IT-1-A1,ICT AS
+249,IT-1-B1,ICT AS
+250,IT-1-C1,ICT AS
+251,IT-1-E1,ICT AS
+252,IT-1-G1,ICT AS
+253,IT-2-D1,ICT A2
+254,IT-2-F1,ICT A2
+255,LE-2-D1,Leisure Studies Applied A2
+256,LW-1-A1,Law AS
+257,LW-1-D1,Law AS
+258,LW-1-E1,Law AS
+259,LW-1-G1,Law AS
+260,LW-2-B1,Law A2
+261,LW-2-C1,Law A2
+262,MA-1-A1,Mathematics GCSE
+263,MA-1-B1,Mathematics GCSE
+264,MA-1-G1,Mathematics GCSE
+265,MD-1-A1,Mathematics - Decision AS
+266,MD-1-C1,Mathematics - Decision AS
+267,MD-1-E1,Mathematics - Decision AS
+268,MD-1-F1,Mathematics - Decision AS
+269,MD-1-G1,Mathematics - Decision AS
+270,MD-2-A1,Mathematics - Decision A2
+271,MD-2-D1,Mathematics - Decision A2
+272,MD-2-F1,Mathematics - Decision A2
+273,ME-1-A1,Media Studies AS
+274,ME-1-B1,Media Studies AS
+275,ME-1-C1,Media Studies AS
+276,ME-2-A1,Media Studies A2
+277,ME-2-B1,Media Studies A2
+278,ME-2-C1,Media Studies A2
+279,MF-1-A1,Further Maths  AS
+280,MF-2-CE,Further Maths A2
+281,MM-1-D1,Mathematics and Mechanics AS
+282,MM-1-F1,Mathematics and Mechanics AS
+283,MM-1-G1,Mathematics and Mechanics AS
+284,MM-2-B1,Mathematics & Mechanics A2
+285,MM-2-D1,Mathematics & Mechanics A2
+286,MN-2-B1,Mathematics & Statistics S1 (New) A2
+287,MN-2-C1,Mathematics & Statistics S1 (New) A2
+288,MN-2-F1,Mathematics & Statistics S1 (New) A2
+289,MP-1-E1,Maths For Physics
+290,MP-1-F1,Maths For Physics
+291,MS-1-C1,Mathematics and Statistics AS
+292,MS-1-D1,Mathematics and Statistics AS
+293,MS-1-G1,Mathematics and Statistics AS
+294,MS-2-E1,Mathematics & Statistics S2 A2
+295,MT-1-A1,Use of Maths AS
+296,MT-1-B1,Use of Maths AS
+297,MT-1-D1,Use of Maths AS
+298,MT-2-G1,Use of Maths A2
+299,MU-1-B1,Music AS
+300,MU-1-D1,Music AS
+301,MU-1-E1,Music AS
+302,MU-2-A1,Music A2
+303,MU-2-C1,Music A2
+304,MX-2-BE,Mathematics Fast track
+305,PE-1-AF,PE AS
+306,PE-1-DE,PE AS
+307,PE-1-ED,PE AS
+308,PE-1-EG,PE AS
+309,PE-2-BF,PE A2
+310,PE-2-CF,PE A2
+311,PE-2-DF,PE A2
+312,PG-1-A1,Politics AS
+313,PG-1-C1,Politics AS
+314,PG-1-E1,Politics AS
+315,PG-1-G1,Politics AS
+316,PG-2-B1,Politics A2
+317,PG-2-C1,Politics A2
+318,PG-2-D1,Politics A2
+319,PG-2-F1,Politics A2
+320,PH-1-A1,Physics AS
+321,PH-1-A2,Physics AS
+322,PH-1-B1,Physics AS
+323,PH-1-C1,Physics AS
+324,PH-1-D1,Physics AS
+325,PH-1-G1,Physics AS
+326,PH-2-B1,Physics A2
+327,PH-2-C1,Physics A2
+328,PH-2-F1,Physics A2
+329,PL-1-C1,Psychology Single Award GCSE
+330,PS-1-A1,Performance Studies AS
+331,PS-1-A2,Performance Studies AS
+332,PS-1-D1,Performance Studies AS
+333,PS-1-E1,Performance Studies AS
+334,PS-1-E2,Performance Studies AS
+335,PS-2-B1,Performance Studies A2
+336,PS-2-B2,Performance Studies A2
+337,PS-2-C1,Performance Studies A2
+338,PS-2-C2,Performance Studies A2
+339,PS-2-F1,Performance Studies A2
+340,PS-2-F2,Performance Studies A2
+341,PT-1-A1,Photography AS
+342,PT-1-B1,Photography AS
+343,PT-1-C1,Photography AS
+344,PY-1-A1,Psychology AS
+345,PY-1-B1,Psychology AS
+346,PY-1-B2,Psychology AS
+347,PY-1-C1,Psychology AS
+348,PY-1-C2,Psychology AS
+349,PY-1-D1,Psychology AS
+350,PY-1-E1,Psychology AS
+351,PY-1-E2,Psychology AS
+352,PY-1-F1,Psychology AS
+353,PY-1-G1,Psychology AS
+354,PY-1-G2,Psychology AS
+355,PY-2-A1,Psychology A2
+356,PY-2-B1,Psychology A2
+357,PY-2-D1,Psychology A2
+358,PY-2-D2,Psychology A2
+359,PY-2-E1,Psychology A2
+360,PY-2-F1,Psychology A2
+361,RS-1-D1,Philosophy & Religious Studies AS
+362,RS-1-E1,Philosophy & Religious Studies AS
+363,RS-1-G1,Philosophy & Religious Studies AS
+364,RS-2-A1,Philosophy & Religious Studies A2
+365,RS-2-B1,Philosophy & Religious Studies A2
+366,SG-1-B1,Spanish GCSE
+367,SG-1-E1,Spanish GCSE
+368,SO-1-AB,Sociology AS
+369,SO-1-B1,Sociology AS
+370,SO-1-C1,Sociology AS
+371,SO-1-D1,Sociology AS
+372,SO-1-EC,Sociology AS
+373,SO-1-G1,Sociology AS
+374,SO-1-G2,Sociology AS
+375,SO-2-A1,Sociology A2
+376,SO-2-B1,Sociology A2
+377,SO-2-C1,Sociology A2
+378,SO-2-CD,Sociology A2
+379,SO-2-E1,Sociology A2
+380,SO-2-F1,Sociology A2
+381,SP-1-D1,Spanish AS
+382,SP-2-F1,Spanish A2
+383,TT-1-B1,Travel and Tourism Applied AS
+384,TT-1-E1,Travel and Tourism Applied AS
+385,TT-2-A1,Travel and Tourism Applied A2
+386,TU-1-ABS,Tutorial - Enrichment Studies Yr 1
+387,TU-1-ACD,Tutorial - Enrichment Studies Yr 1
+388,TU-1-AJE,Tutorial - Enrichment Studies Yr 1
+389,TU-1-AJS,Tutorial - Enrichment Studies Yr 1
+390,TU-1-AMH,Tutorial - Enrichment Studies Yr 1
+391,TU-1-BAM,Tutorial - Enrichment Studies Yr 1
+392,TU-1-CJB,Tutorial - Enrichment Studies Yr 1
+393,TU-1-CNH,Tutorial - Enrichment Studies Yr 1
+394,TU-1-CRU,Tutorial - Enrichment Studies Yr 1
+395,TU-1-DC,Tutorial - Enrichment Studies Yr 1
+396,TU-1-EEM,Tutorial - Enrichment Studies Yr 1
+397,TU-1-GHN,Tutorial - Enrichment Studies Yr 1
+398,TU-1-GPM,Tutorial - Enrichment Studies Yr 1
+399,TU-1-JAL,Tutorial - Enrichment Studies Yr 1
+400,TU-1-JHI,Tutorial - Enrichment Studies Yr 1
+401,TU-1-JJP,Tutorial - Enrichment Studies Yr 1
+402,TU-1-JKR,Tutorial - Enrichment Studies Yr 1
+403,TU-1-JON,Tutorial - Enrichment Studies Yr 1
+404,TU-1-JRH,Tutorial - Enrichment Studies Yr 1
+405,TU-1-LDL,Tutorial - Enrichment Studies Yr 1
+406,TU-1-LJF,Tutorial - Enrichment Studies Yr 1
+407,TU-1-MCO,Tutorial - Enrichment Studies Yr 1
+408,TU-1-MEB,Tutorial - Enrichment Studies Yr 1
+409,TU-1-MJS,Tutorial - Enrichment Studies Yr 1
+410,TU-1-PWS,Tutorial - Enrichment Studies Yr 1
+411,TU-1-RCL,Tutorial - Enrichment Studies Yr 1
+412,TU-1-RDK,Tutorial - Enrichment Studies Yr 1
+413,TU-1-SJL,Tutorial - Enrichment Studies Yr 1
+414,TU-1-SKR,Tutorial - Enrichment Studies Yr 1
+415,TU-1-SLG,Tutorial - Enrichment Studies Yr 1
+416,TU-1-SMT,Tutorial - Enrichment Studies Yr 1
+417,TU-1-SRB,Tutorial - Enrichment Studies Yr 1
+418,TU-1-STA,Tutorial - Enrichment Studies Yr 1
+419,TU-1-TJB,Tutorial - Enrichment Studies Yr 1
+420,TU-2-ADP,Tutorial - Enrichment Studies Yr 2
+421,TU-2-ADW,Tutorial - Enrichment Studies Yr 2
+422,TU-2-AEM,Tutorial - Enrichment Studies Yr 2
+423,TU-2-AER,Tutorial - Enrichment Studies Yr 2
+424,TU-2-AJC,Tutorial - Enrichment Studies Yr 2
+425,TU-2-AJW,Tutorial - Enrichment Studies Yr 2
+426,TU-2-BJG,Tutorial - Enrichment Studies Yr 2
+427,TU-2-CH,Tutorial - Enrichment Studies Yr 2
+428,TU-2-CSS,Tutorial - Enrichment Studies Yr 2
+429,TU-2-DBP,Tutorial - Enrichment Studies Yr 2
+430,TU-2-DJR,Tutorial - Enrichment Studies Yr 2
+431,TU-2-DMC,Tutorial - Enrichment Studies Yr 2
+432,TU-2-HF,Tutorial - Enrichment Studies Yr 2
+433,TU-2-HFJ,Tutorial - Enrichment Studies Yr 2
+434,TU-2-HVW,Tutorial - Enrichment Studies Yr 2
+435,TU-2-HWA,Tutorial - Enrichment Studies Yr 2
+436,TU-2-IR,Tutorial - Enrichment Studies Yr 2
+437,TU-2-JAB,Tutorial - Enrichment Studies Yr 2
+438,TU-2-JHU,Tutorial - Enrichment Studies Yr 2
+439,TU-2-JSW,Tutorial - Enrichment Studies Yr 2
+440,TU-2-JTN,Tutorial - Enrichment Studies Yr 2
+441,TU-2-KMN,Tutorial - Enrichment Studies Yr 2
+442,TU-2-LMB,Tutorial - Enrichment Studies Yr 2
+443,TU-2-MDK,Tutorial - Enrichment Studies Yr 2
+444,TU-2-MJB,Tutorial - Enrichment Studies Yr 2
+445,TU-2-MJC,Tutorial - Enrichment Studies Yr 2
+446,TU-2-MWE,Tutorial - Enrichment Studies Yr 2
+447,TU-2-PEL,Tutorial - Enrichment Studies Yr 2
+448,TU-2-RLB,Tutorial - Enrichment Studies Yr 2
+449,TU-2-RM,Tutorial - Enrichment Studies Yr 2
+450,TU-2-RWM,Tutorial - Enrichment Studies Yr 2
+451,TU-2-SEH,Tutorial - Enrichment Studies Yr 2
+452,TU-2-TAM,Tutorial - Enrichment Studies Yr 2
