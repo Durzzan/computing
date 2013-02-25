@@ -136,7 +136,7 @@
                         .Year = CurrentRow(4)
                     End With
                     'puts data from the student structure into the student csv file
-                    FilePut(FileNum, student, OnRec)
+                    FilePut(FileNum, student + vbnewline, OnRec)
                 End If
             Catch ex As  _
                 Microsoft.VisualBasic.FileIO.MalformedLineException
@@ -161,6 +161,7 @@
         Dim CurrentRow As String()
         Dim OnRec As Integer = 0
         Dim FileNum As Integer = FreeFile()
+	Dim parts() as string
         'opens the file
         FileOpen(FileNum, "Staff.csv", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Staff))
 
@@ -172,13 +173,11 @@
                     'puts data into file structure staff
                     With staff
                         .staffNO = CurrentRow(0)
-						dim parts() as string = split(currentrow(1), " " )
-						.surname = parts(1)
-						.Forename = parts(0)
-                        .admin = CurrentRow(1)
-                        .staffID = CurrentRow(2)
-                        .DOB = CurrentRow(5)
-                        .password = Encrypt("db" & Format(.DOB, "ddMMyyyy"))
+			parts() = split(currentrow(1), " " )
+			.surname = parts(1)
+			.Forename = parts(0)
+                        .admin = CurrentRow(2)
+                        .staffID = (parts(0).Chars(0) + parts(1).Chars(0) + parts(1).Chars(1)).tostring.toupper
                     End With
                     'puts data in file structure staff into the staff dat file
                     FilePut(FileNum, staff, OnRec)
