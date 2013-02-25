@@ -172,10 +172,11 @@
                     'puts data into file structure staff
                     With staff
                         .staffNO = CurrentRow(0)
+						dim parts() as string = split(currentrow(1), " " )
+						.surname = parts(1)
+						.Forename = parts(0)
                         .admin = CurrentRow(1)
                         .staffID = CurrentRow(2)
-                        .Forename = CurrentRow(3)
-                        .Surname = CurrentRow(4)
                         .DOB = CurrentRow(5)
                         .password = Encrypt("db" & Format(.DOB, "ddMMyyyy"))
                     End With
