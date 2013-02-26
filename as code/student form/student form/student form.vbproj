@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FE0FF1A7-1F65-470B-A339-42EF17B8E3AC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>course work project</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>course work project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>course work project.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\..\student form.Designer.vb">
+      <DependentUpon>student form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="..\..\student form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin-Rewards.Designer.vb">
+      <DependentUpon>Admin-Rewards.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Rewards.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin-Staff.Designer.vb">
+      <DependentUpon>Admin-Staff.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Staff.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Admin-Student.Designer.vb">
+      <DependentUpon>Admin-Student.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Admin-Student.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AdminDirectory.designer.vb">
+      <DependentUpon>AdminDirectory.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AdminDirectory.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RewardsEdit.Designer.vb">
+      <DependentUpon>RewardsEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="RewardsEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StaffEdit.Designer.vb">
+      <DependentUpon>StaffEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StaffEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentEdit.Designer.vb">
+      <DependentUpon>StudentEdit.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentEdit.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StudentRecordsForm.Designer.vb">
+      <DependentUpon>StudentRecordsForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="StudentRecordsForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginFrom.Designer.vb">
+      <DependentUpon>loginFrom.vb</DependentUpon>
+    </Compile>
+    <Compile Include="loginFrom.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="modFunctions.vb" />
+    <Compile Include="modVariables.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="staffform.Designer.vb">
+      <DependentUpon>staffform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="staffform.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="..\..\student form.resx">
+      <DependentUpon>student form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin-Rewards.resx">
+      <DependentUpon>Admin-Rewards.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin-Staff.resx">
+      <DependentUpon>Admin-Staff.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Admin-Student.resx">
+      <DependentUpon>Admin-Student.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminDirectory.resx">
+      <DependentUpon>AdminDirectory.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RewardsEdit.resx">
+      <DependentUpon>RewardsEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StaffEdit.resx">
+      <DependentUpon>StaffEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentEdit.resx">
+      <DependentUpon>StudentEdit.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="StudentRecordsForm.resx">
+      <DependentUpon>StudentRecordsForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="loginFrom.resx">
+      <DependentUpon>loginFrom.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="staffform.resx">
+      <DependentUpon>staffform.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
