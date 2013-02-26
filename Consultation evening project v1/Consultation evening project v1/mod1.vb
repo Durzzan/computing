@@ -15,6 +15,7 @@
 
     Public Structure StaffRec
         Public StaffNO As Byte
+        <VBFixedString(3)> Public staffID As String
         <VBFixedString(20)> Public Forename As String
         <VBFixedString(20)> Public Surname As String
         Public admin As Boolean
@@ -172,11 +173,16 @@
                     OnRec = OnRec + 1
                     'puts data into file structure staff
                     With staff
-                        .staffNO = CurrentRow(0)
+                        .StaffNO = CurrentRow(0)
+                        'forename and surname are saved in the same field on the parent file so need to be broken up
                         Dim parts() As String = Split(CurrentRow(1), " ")
                         .Surname = parts(1)
                         .Forename = parts(0)
-                        .admin = CurrentRow(2)
+                        .staffID = CurrentRow(2)
+                        If CurrentRow(2) = 0 Then
+                            .admin = False
+                        Else : .admin = True
+                        End If
                     End With
                     'puts data in file structure staff into the staff dat file
                     FilePut(FileNum, staff, OnRec)
@@ -271,4 +277,77 @@
         'closes file
         FileClose(Filenum)
     End Function
+
+    'retreives a appointment record
+    Public Function Getappointmentrec(ByVal RecNo As Integer) As AppointmentsRec
+        'function for getting data from Appointments dat file
+        Dim Filenum As Integer = FreeFile()
+        Getappointmentrec = Nothing
+        'opens the appointments dat file
+        FileOpen(Filenum, "Appointments.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Appointment))
+        'gets data
+        FileGet(Filenum, Getappointmentrec, RecNo)
+        'closes file
+        FileClose(Filenum)
+    End Function
+
+    'overwrites an student onto the student dat file
+    Public Sub PutStudent(ByVal EditedStudent As StudRec, ByVal RecNo As Integer)
+        'sub for putting data into the student dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens student dat file
+        FileOpen(Filenum, "Student.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(student))
+        'puts data into student dat file
+        FilePut(Filenum, EditedStudent, RecNo)
+        'closes student dat file
+        FileClose(Filenum)
+    End Sub
+
+    'overwrites an staff onto the staff dat file
+    Public Sub PutStaff(ByVal EditedStaff As StaffRec, ByVal RecNo As Integer)
+        'sub for putting data into the staff dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens staff dat file
+        FileOpen(Filenum, "Staff.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Staff))
+        'puts data into staff dat file
+        FilePut(Filenum, EditedStaff, RecNo)
+        'closes staff dat file
+        FileClose(Filenum)
+    End Sub
+
+    'overwrites an studavrec onto the studav dat file
+    Public Sub PutStudAv(ByVal EditedStudAv As StudAvRec, ByVal RecNo As Integer)
+        'sub for putting data into the studAv dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens studAv dat file
+        FileOpen(Filenum, "StudAv.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(StudAv))
+        'puts data into studAv dat file
+        FilePut(Filenum, EditedStudAv, RecNo)
+        'closes studAv dat file
+        FileClose(Filenum)
+    End Sub
+
+    'overwrites an staffAv onto the staffAv dat file
+    Public Sub PutStaffAv(ByVal EditedStaffAv As StaffAvRec, ByVal RecNo As Integer)
+        'sub for putting data into the staffAv dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens staffAv dat file
+        FileOpen(Filenum, "StaffAv.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(StaffAv))
+        'puts data into staffAv dat file
+        FilePut(Filenum, EditedStaffAv, RecNo)
+        'closes staffAv dat file
+        FileClose(Filenum)
+    End Sub
+
+    'overwrites an Day onto the day dat file
+    Public Sub Putday(ByVal Editedday As DayRec, ByVal RecNo As Integer)
+        'sub for putting data into the day dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens day dat file
+        FileOpen(Filenum, "day.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Day))
+        'puts data into day dat file
+        FilePut(Filenum, Editedday, RecNo)
+        'closes day dat file
+        FileClose(Filenum)
+    End Sub
 End Module
