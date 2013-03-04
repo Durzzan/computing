@@ -200,6 +200,88 @@
         TextFileReader.Dispose()
     End Sub
 
+    ' imports student lessons
+    Public Sub Importlesson()
+        'opens microsoft file reader and sets the file to be read as studentclass.csv
+        Dim TextFileReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("studentclass.csv")
+        TextFileReader.TextFieldType = FileIO.FieldType.Delimited
+        TextFileReader.SetDelimiters(",")
+
+        Dim CurrentRow As String()
+        Dim OnRec As Integer = 0
+        Dim FileNum As Integer = FreeFile()
+        Dim lastlesson As Integer = -1
+
+        'opens the file
+        FileOpen(FileNum, "lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
+
+        While Not TextFileReader.EndOfData
+            Try
+                CurrentRow = TextFileReader.ReadFields()
+                If Not CurrentRow Is Nothing Then
+                    OnRec = OnRec + 1
+                    'puts data into file structure lesson
+                    With Lesson
+                        .LessonNO = OnRec
+                        .StudNO = CurrentRow(0)
+                        'inserts the class NO.
+                        .StaffNO = CurrentRow(1)
+                    End With
+                    'puts data in file structure lesson into the lesson dat file
+                    FilePut(FileNum, Lesson, OnRec)
+                End If
+            Catch ex As  _
+            Microsoft.VisualBasic.FileIO.MalformedLineException
+                'error in text sends error message and ends try
+                MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+            End Try
+        End While
+        Nstaff = OnRec
+        'sends message box notifying admin that the student side of lessons have been imported and how many have been
+        MsgBox("student half imported")
+        FileClose(FileNum)
+        TextFileReader.Dispose()
+
+        'adding in the staff data
+
+        'opens microsoft file reader and sets the file to be read as classslots.csv
+        Dim TextFileReader2 As New Microsoft.VisualBasic.FileIO.TextFieldParser("classSlots.csv")
+        TextFileReader2.TextFieldType = FileIO.FieldType.Delimited
+        TextFileReader2.SetDelimiters(",")
+
+        OnRec = 0
+
+        'opens the file
+        FileOpen(FileNum, "lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
+
+        While Not TextFileReader.EndOfData
+            Try
+                CurrentRow = TextFileReader.ReadFields()
+                If Not CurrentRow Is Nothing And CurrentRow(0) <> lastlesson Then
+                    OnRec = OnRec + 1
+                    lastlesson = CurrentRow(0)
+                    For counter As Integer = 1 To Nlesson
+                        Getlesson(counter)
+                        If Lesson.StaffNO = CurrentRow(0) Then
+                            Lesson.StaffNO = CurrentRow(3)
+                        End If
+                        Putlesson(Lesson, Lesson.LessonNO)
+                    Next
+                End If
+            Catch ex As  _
+            Microsoft.VisualBasic.FileIO.MalformedLineException
+                'error in text sends error message and ends try
+                MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+            End Try
+        End While
+        Nstaff = OnRec
+        'sends message box notifying admin that the student side of lessons have been imported and how many have been
+        MsgBox("student half imported")
+        FileClose(FileNum)
+        TextFileReader.Dispose()
+
+    End Sub
+
     ' retrives a student record
     Public Function GetStudent(ByVal RecNo As Integer) As StudRec
         'function for getting data from student dat file
@@ -348,6 +430,30 @@
         'puts data into day dat file
         FilePut(Filenum, Editedday, RecNo)
         'closes day dat file
+        FileClose(Filenum)
+    End Sub
+
+    'overwrites an lesson onto the lesson dat file
+    Public Sub Putlesson(ByVal Editedlesson As LessonRec, ByVal RecNo As Integer)
+        'sub for putting data into the lesson dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens lesson dat file
+        FileOpen(Filenum, "Lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
+        'puts data into lesson dat file
+        FilePut(Filenum, Editedlesson, RecNo)
+        'closes lesson dat file
+        FileClose(Filenum)
+    End Sub
+
+    'overwrites an appointment onto the appointment dat file
+    Public Sub Putappointment(ByVal Editedappointment As AppointmentsRec, ByVal RecNo As Integer)
+        'sub for putting data into the appointment dat file
+        Dim Filenum As Integer = FreeFile()
+        'opens appointment dat file
+        FileOpen(Filenum, "appointments.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Appointment))
+        'puts data into appointment dat file
+        FilePut(Filenum, Editedappointment, RecNo)
+        'closes the appointment dat file
         FileClose(Filenum)
     End Sub
 End Module
