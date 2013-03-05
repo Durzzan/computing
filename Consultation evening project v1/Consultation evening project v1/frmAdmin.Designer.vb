@@ -24,7 +24,7 @@ Partial Class frmAdmin
     Private Sub InitializeComponent()
         Me.btnResent = New System.Windows.Forms.Button()
         Me.btnImport = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btnDay = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnResent
@@ -45,21 +45,21 @@ Partial Class frmAdmin
         Me.btnImport.Text = "Import staff and student data"
         Me.btnImport.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btnDay
         '
-        Me.Button1.Location = New System.Drawing.Point(255, 72)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(75, 23)
-        Me.Button1.TabIndex = 2
-        Me.Button1.Text = "Button1"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btnDay.Location = New System.Drawing.Point(42, 105)
+        Me.btnDay.Name = "btnDay"
+        Me.btnDay.Size = New System.Drawing.Size(93, 49)
+        Me.btnDay.TabIndex = 2
+        Me.btnDay.Text = "Day settings"
+        Me.btnDay.UseVisualStyleBackColor = True
         '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(403, 295)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.btnDay)
         Me.Controls.Add(Me.btnImport)
         Me.Controls.Add(Me.btnResent)
         Me.Name = "frmAdmin"
@@ -69,5 +69,5 @@ Partial Class frmAdmin
     End Sub
     Friend WithEvents btnResent As System.Windows.Forms.Button
     Friend WithEvents btnImport As System.Windows.Forms.Button
-    Friend WithEvents Button1 As System.Windows.Forms.Button
+    Friend WithEvents btnDay As System.Windows.Forms.Button
 End Class
