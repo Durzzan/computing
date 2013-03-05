@@ -4,6 +4,8 @@
         'splits up the user data to seperate out the users username
         Dim parts() As String = Split(My.User.Name, "\")
         user = parts(1)
+
+        
     End Sub
 
     Private Sub btnAvailability_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles btnAvailability.Click

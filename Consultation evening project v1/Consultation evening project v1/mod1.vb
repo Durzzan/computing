@@ -94,7 +94,7 @@
 
     'Day variables
 
-    Public Appointmentlength As Byte
+    Public Appointmentlength As Integer
     Public Day As DayRec = Nothing
     Public NDay As Integer = -1
 
@@ -236,8 +236,7 @@
                 MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
             End Try
         End While
-        Nstaff = OnRec
-        'sends message box notifying admin that the student side of lessons have been imported and how many have been
+        'sends message box notifying admin that the student side of lessons have been imported
         MsgBox("student half imported")
         FileClose(FileNum)
         TextFileReader.Dispose()
@@ -274,8 +273,7 @@
                 MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
             End Try
         End While
-        Nstaff = OnRec
-        'sends message box notifying admin that the student side of lessons have been imported and how many have been
+        'sends message box notifying admin that the staff side of lessons have been imported
         MsgBox("student half imported")
         FileClose(FileNum)
         TextFileReader.Dispose()
@@ -455,5 +453,18 @@
         FilePut(Filenum, Editedappointment, RecNo)
         'closes the appointment dat file
         FileClose(Filenum)
+    End Sub
+    Public Sub ImportMisc()
+        'import misc.dat data
+        Dim filenum As Integer = FreeFile()
+        FileOpen(filenum, "misc.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, 4)
+        FileGet(filenum, Nstudents, 1)
+        FileGet(filenum, Nstaff, 2)
+        FileGet(filenum, NStudAv, 3)
+        FileGet(filenum, NStaffAv, 4)
+        FileGet(filenum, NAppointment, 5)
+        FileGet(filenum, Nlesson, 6)
+        FileGet(filenum, NDay, 7)
+        FileGet(filenum, Appointmentlength, 8)
     End Sub
 End Module
