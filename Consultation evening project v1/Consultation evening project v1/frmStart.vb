@@ -5,7 +5,10 @@
         Dim parts() As String = Split(My.User.Name, "\")
         user = parts(1)
 
-       
+        Call ImportStudents()
+        MsgBox("it worked")
+
+
 
     End Sub
 

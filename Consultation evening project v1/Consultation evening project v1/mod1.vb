@@ -5,7 +5,7 @@
 
     Public Structure StudRec
         Public StudNO As Short
-        Public StudID As Integer
+        <VBFixedString(6)> Public StudID As String
         <VBFixedString(20)> Public Forename As String
         <VBFixedString(20)> Public Surname As String
         Public Year As Byte
@@ -165,27 +165,27 @@
 
         'opens the file
         FileOpen(FileNum, "Staff.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Staff))
-
+        Dim parts() As String
         While Not TextFileReader.EndOfData
             Try
                 CurrentRow = TextFileReader.ReadFields()
                 If Not CurrentRow Is Nothing Then
                     OnRec = OnRec + 1
                     'puts data into file structure staff
-                    With staff
+                    With Staff
                         .StaffNO = CurrentRow(0)
                         'forename and surname are saved in the same field on the parent file so need to be broken up
-                        Dim parts() As String = Split(CurrentRow(1), " ")
+                        parts = Split(CurrentRow(1), " ")
                         .Surname = parts(1)
                         .Forename = parts(0)
                         .staffID = CurrentRow(2)
-                        If CurrentRow(2) = 0 Then
+                        If CurrentRow(3) = 0 Then
                             .admin = False
                         Else : .admin = True
                         End If
                     End With
                     'puts data in file structure staff into the staff dat file
-                    FilePut(FileNum, staff, OnRec)
+                    FilePut(FileNum, Staff, OnRec)
                 End If
             Catch ex As  _
             Microsoft.VisualBasic.FileIO.MalformedLineException
@@ -196,6 +196,47 @@
         Nstaff = OnRec
         'sends message box notifying student that staff have been imported and how many have been
         MsgBox(Nstaff & " Staff imported")
+        FileClose(FileNum)
+        TextFileReader.Dispose()
+    End Sub
+    'imports students into thier dat file
+    Public Sub ImportStudents1()
+        'opens microsoft file reader and sets the file to be read as students.csv
+        Dim TextFileReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("students.csv")
+        TextFileReader.TextFieldType = FileIO.FieldType.Delimited
+        TextFileReader.SetDelimiters(",")
+
+        Dim CurrentRow As String()
+        Dim OnRec As Integer = 0
+        Dim FileNum As Integer = FreeFile()
+
+        'opens the file
+        FileOpen(FileNum, "student.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(student))
+        While Not TextFileReader.EndOfData
+            Try
+                CurrentRow = TextFileReader.ReadFields()
+                If Not CurrentRow Is Nothing Then
+                    OnRec = OnRec + 1
+                    'puts data into file structure studnet
+                    With student
+                        .StudNO = CurrentRow(0)
+                        .StudID = CurrentRow(1)
+                        .Surname = CurrentRow(2)
+                        .Forename = CurrentRow(3)
+                        .Year = CurrentRow(4)
+                    End With
+                    'puts data in file structure student into the student dat file
+                    FilePut(FileNum, student, OnRec)
+                End If
+            Catch ex As  _
+            Microsoft.VisualBasic.FileIO.MalformedLineException
+                'error in text sends error message and ends try
+                MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
+            End Try
+        End While
+        Nstaff = OnRec
+        'sends message box notifying student that staff have been imported and how many have been
+        MsgBox(Nstudents & " Students imported")
         FileClose(FileNum)
         TextFileReader.Dispose()
     End Sub
