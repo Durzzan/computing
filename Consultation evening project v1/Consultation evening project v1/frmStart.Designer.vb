@@ -43,6 +43,7 @@ Partial Class frmStart
         Me.btnAvailability.Name = "btnAvailability"
         Me.btnAvailability.Size = New System.Drawing.Size(75, 23)
         Me.btnAvailability.TabIndex = 1
+        Me.btnAvailability.Text = "enter"
         Me.btnAvailability.UseVisualStyleBackColor = True
         '
         'frmStart

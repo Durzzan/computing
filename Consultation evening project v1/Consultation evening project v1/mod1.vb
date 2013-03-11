@@ -62,7 +62,7 @@
     Public Structure LessonRec
         Public LessonNO As Integer
         Public StudNO As Short
-        Public StaffNO As Byte
+        Public StaffNO As Short
     End Structure
 
     'variables
@@ -200,9 +200,8 @@
         TextFileReader.Dispose()
     End Sub
 
-    ' imports student lessons
-    Public Sub Importlesson()
-        'opens microsoft file reader and sets the file to be read as studentclass.csv
+    Public Sub importLessonsStudent()
+        'opens microsoft file reader and sets the file to be read as tutor.csv
         Dim TextFileReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("studentclass.csv")
         TextFileReader.TextFieldType = FileIO.FieldType.Delimited
         TextFileReader.SetDelimiters(",")
@@ -210,26 +209,22 @@
         Dim CurrentRow As String()
         Dim OnRec As Integer = 0
         Dim FileNum As Integer = FreeFile()
-        Dim filenum2 As Integer = FreeFile()
-        Dim lastlesson As Integer = -1
 
         'opens the file
         FileOpen(FileNum, "lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
-
         While Not TextFileReader.EndOfData
             Try
                 CurrentRow = TextFileReader.ReadFields()
                 If Not CurrentRow Is Nothing Then
                     OnRec = OnRec + 1
-                    'puts data into file structure lesson
+                    'puts data into file structure staff
                     With Lesson
                         .LessonNO = OnRec
-                        .StudNO = CurrentRow(0)
-                        'inserts the class NO.
                         .StaffNO = CurrentRow(1)
+                        .StudNO = CurrentRow(0)
                     End With
-                    'puts data in file structure lesson into the lesson dat file
-                    Putlesson(Lesson, Lesson.LessonNO)
+                    'puts data in the lesson file structure into the lesson dat file
+                    FilePut(FileNum, Lesson, OnRec)
                 End If
             Catch ex As  _
             Microsoft.VisualBasic.FileIO.MalformedLineException
@@ -237,50 +232,53 @@
                 MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
             End Try
         End While
-        'sends message box notifying admin that the student side of lessons have been imported
-        MsgBox("student half imported")
+        Nstaff = OnRec
+        'sends message box notifying admin that student part of lessons have been imported and how many have been imported
+        MsgBox(Nstaff & " Student half imported")
         FileClose(FileNum)
         TextFileReader.Dispose()
+    End Sub
 
-        'adding in the staff data
-
+    Public Sub importLessonStaff()
         'opens microsoft file reader and sets the file to be read as classslots.csv
-        Dim TextFileReader2 As New Microsoft.VisualBasic.FileIO.TextFieldParser("classSlots.csv")
-        TextFileReader2.TextFieldType = FileIO.FieldType.Delimited
-        TextFileReader2.SetDelimiters(",")
+        Dim TextFileReader As New Microsoft.VisualBasic.FileIO.TextFieldParser("classSlots.csv")
+        TextFileReader.TextFieldType = FileIO.FieldType.Delimited
+        TextFileReader.SetDelimiters(",")
+
+        Dim lastlesson As Integer = -1
+        Dim currentrow As String()
+        Dim onrec As Integer = 0
+        Dim filenum As Integer = FreeFile()
 
         OnRec = 0
-
         'opens the file
-        FileOpen(filenum2, "lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
-
+        FileOpen(filenum, "lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
         While Not TextFileReader.EndOfData
             Try
-                CurrentRow = TextFileReader.ReadFields()
-                If Not CurrentRow Is Nothing And CurrentRow(0) <> lastlesson Then
-                    OnRec = OnRec + 1
-                    lastlesson = CurrentRow(0)
+                currentrow = TextFileReader.ReadFields()
+                If Not currentrow Is Nothing And currentrow(0) <> lastlesson Then
+                    onrec = onrec + 1
+                    lastlesson = currentrow(0)
                     For counter As Integer = 1 To Nlesson
                         Getlesson(counter)
-                        If Lesson.StaffNO = CurrentRow(0) Then
-                            Lesson.StaffNO = CurrentRow(3)
+                        If Lesson.StaffNO = currentrow(0) Then
+                            Lesson.StaffNO = currentrow(3)
                         End If
                         Putlesson(Lesson, Lesson.LessonNO)
                     Next
                 End If
             Catch ex As  _
-            Microsoft.VisualBasic.FileIO.MalformedLineException
-                'error in text sends error message and ends try
+                    Microsoft.VisualBasic.FileIO.MalformedLineException
+                'error in text sends error message and ends try      
                 MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
             End Try
         End While
         'sends message box notifying admin that the staff side of lessons have been imported
         MsgBox("student half imported")
-        FileClose(filenum2)
+        FileClose(filenum)
         TextFileReader.Dispose()
 
     End Sub
-
     ' retrives a student record
     Public Function GetStudent(ByVal RecNo As Integer) As StudRec
         'function for getting data from student dat file
@@ -300,7 +298,7 @@
         Dim Filenum As Integer = FreeFile()
         GetStaff = Nothing
         'opens the staff dat file
-        FileOpen(Filenum, "Staff.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(staff))
+        FileOpen(Filenum, "Staff.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Staff))
         'gets data
         FileGet(Filenum, GetStaff, RecNo)
         'closes file

@@ -5,8 +5,7 @@
         Dim parts() As String = Split(My.User.Name, "\")
         user = parts(1)
 
-        Call Importlesson()
-        MsgBox("it worked")
+
 
 
 
