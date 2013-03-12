@@ -78,6 +78,12 @@
     <Compile Include="frmAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmDaySettings.Designer.vb">
+      <DependentUpon>frmDaySettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDaySettings.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmStaff.Designer.vb">
       <DependentUpon>frmStaff.vb</DependentUpon>
     </Compile>
@@ -116,6 +122,9 @@
   <ItemGroup>
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDaySettings.resx">
+      <DependentUpon>frmDaySettings.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmStaff.resx">
       <DependentUpon>frmStaff.vb</DependentUpon>
