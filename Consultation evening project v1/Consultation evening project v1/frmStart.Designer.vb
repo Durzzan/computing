@@ -24,6 +24,8 @@ Partial Class frmStart
     Private Sub InitializeComponent()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.btnAvailability = New System.Windows.Forms.Button()
+        Me.btnadmin = New System.Windows.Forms.Button()
+        Me.btnExit = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -39,12 +41,31 @@ Partial Class frmStart
         'btnAvailability
         '
         Me.btnAvailability.DialogResult = System.Windows.Forms.DialogResult.Cancel
-        Me.btnAvailability.Location = New System.Drawing.Point(144, 148)
+        Me.btnAvailability.Location = New System.Drawing.Point(136, 131)
         Me.btnAvailability.Name = "btnAvailability"
-        Me.btnAvailability.Size = New System.Drawing.Size(75, 23)
+        Me.btnAvailability.Size = New System.Drawing.Size(106, 51)
         Me.btnAvailability.TabIndex = 1
-        Me.btnAvailability.Text = "enter"
+        Me.btnAvailability.Text = "Enter"
         Me.btnAvailability.UseVisualStyleBackColor = True
+        '
+        'btnadmin
+        '
+        Me.btnadmin.Location = New System.Drawing.Point(136, 188)
+        Me.btnadmin.Name = "btnadmin"
+        Me.btnadmin.Size = New System.Drawing.Size(106, 51)
+        Me.btnadmin.TabIndex = 2
+        Me.btnadmin.Text = "Admin"
+        Me.btnadmin.UseVisualStyleBackColor = True
+        Me.btnadmin.Visible = False
+        '
+        'btnExit
+        '
+        Me.btnExit.Location = New System.Drawing.Point(279, 273)
+        Me.btnExit.Name = "btnExit"
+        Me.btnExit.Size = New System.Drawing.Size(87, 31)
+        Me.btnExit.TabIndex = 3
+        Me.btnExit.Text = "Exit"
+        Me.btnExit.UseVisualStyleBackColor = True
         '
         'frmStart
         '
@@ -52,6 +73,8 @@ Partial Class frmStart
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(388, 316)
         Me.ControlBox = False
+        Me.Controls.Add(Me.btnExit)
+        Me.Controls.Add(Me.btnadmin)
         Me.Controls.Add(Me.btnAvailability)
         Me.Controls.Add(Me.Label1)
         Me.Name = "frmStart"
@@ -62,4 +85,6 @@ Partial Class frmStart
     End Sub
     Friend WithEvents Label1 As System.Windows.Forms.Label
     Friend WithEvents btnAvailability As System.Windows.Forms.Button
+    Friend WithEvents btnadmin As System.Windows.Forms.Button
+    Friend WithEvents btnExit As System.Windows.Forms.Button
 End Class

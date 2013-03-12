@@ -29,7 +29,7 @@ Partial Class frmAdmin
         '
         'btnResent
         '
-        Me.btnResent.Location = New System.Drawing.Point(42, 50)
+        Me.btnResent.Location = New System.Drawing.Point(42, 105)
         Me.btnResent.Name = "btnResent"
         Me.btnResent.Size = New System.Drawing.Size(93, 49)
         Me.btnResent.TabIndex = 0
@@ -38,6 +38,7 @@ Partial Class frmAdmin
         '
         'btnImport
         '
+        Me.btnImport.Cursor = System.Windows.Forms.Cursors.Default
         Me.btnImport.Location = New System.Drawing.Point(141, 50)
         Me.btnImport.Name = "btnImport"
         Me.btnImport.Size = New System.Drawing.Size(93, 49)
@@ -47,7 +48,7 @@ Partial Class frmAdmin
         '
         'btnDay
         '
-        Me.btnDay.Location = New System.Drawing.Point(42, 105)
+        Me.btnDay.Location = New System.Drawing.Point(42, 50)
         Me.btnDay.Name = "btnDay"
         Me.btnDay.Size = New System.Drawing.Size(93, 49)
         Me.btnDay.TabIndex = 2

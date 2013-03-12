@@ -71,6 +71,7 @@
     'general variables 
     'contains the users username
     Public user As String
+    Public usertype As Byte = 0
 
     'student variables
 
