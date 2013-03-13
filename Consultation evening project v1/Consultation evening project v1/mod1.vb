@@ -26,7 +26,7 @@
     Public Structure StudAvRec
         Public Appointment As Integer
         Public StudNo As Short
-        Public Day As Byte
+        Public DayNO As Byte
         Public Block As Byte
         Public available As Boolean
     End Structure
@@ -36,7 +36,7 @@
     Public Structure StaffAvRec
         Public Appointment As Integer
         Public StaffNO As Byte
-        Public Day As Byte
+        Public DayNO As Byte
         Public Block As Byte
         Public Available As Boolean
     End Structure
@@ -45,8 +45,8 @@
 
     Public Structure DayRec
         Public DayNO As Byte
-        Public Start As Byte
-        Public finish As Byte
+        Public Start As Integer
+        Public finish As Integer
     End Structure
 
     'appointments structure
@@ -95,7 +95,7 @@
 
     'Day variables
 
-    Public Appointmentlength As Integer
+    Public Appointmentlength As Integer = -1
     Public Day As DayRec = Nothing
     Public NDay As Integer = -1
 
