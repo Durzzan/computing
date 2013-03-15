@@ -34,6 +34,8 @@
         If NDay <> -1 And Appointmentlength <> -1 Then
             For counter As Integer = 1 To NDay
                 Day.DayNO = counter
+                Day.Start = 0
+                Day.finish = 287
                 Putday(Day, counter)
             Next
         Else
@@ -58,13 +60,13 @@
     End Sub
 
     Private Sub cmbDay_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbDay.SelectedIndexChanged
-        Dim value As String
-        GetDay(cmbDay.SelectedItem)
-        If Appointmentlength = 5 Then
-            For counter As Integer = 0 To 287
-                cmbStart.Items.Add(
-            Next
-        End If
+        Call populateStartEndDaySettings()
+    End Sub
 
+    Private Sub cmbStart_SelectedIndexChanged(sender As System.Object, e As System.EventArgs) Handles cmbStart.SelectedIndexChanged
+        Dim hours As Integer = (cmbStart.SelectedItem) \ 100
+        Dim minuets As Integer = ((cmbStart.SelectedItem) - (((cmbStart.SelectedItem) \ 100) * 100)) / 5
+        Day.Start = (hours * 12) + minuets
+        Call populateStartEndDaySettings()
     End Sub
 End Class

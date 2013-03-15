@@ -467,4 +467,54 @@
         FileGet(filenum, NDay, 7)
         FileGet(filenum, Appointmentlength, 8)
     End Sub
+
+    Public Sub populateStartEndDaySettings()
+        'populates cmbstart with the times at the required appiontment length apart
+        Dim hours As String = ""
+        Dim minuets As String = ""
+        Dim ampm As String = ""
+        Day = GetDay(frmDaySettings.cmbDay.SelectedItem)
+        If Appointmentlength = 5 Then
+            'populates cmbstart with 5 min appointments slots
+            For counter As Integer = Day.Start To (Day.finish - 1)
+                'each slot contained between the beginin and the finsish time is converted into 24hour 
+                'military style time
+                hours = (counter \ 12).ToString
+                If Len(hours) = 1 Then
+                    hours = "0" + hours
+                ElseIf Len(hours) = 0 Then
+                    hours = "00"
+                End If
+                minuets = (counter - ((counter \ 12) * 12))
+                minuets = minuets * 5
+                If Len(minuets) = 1 Then
+                    minuets = "0" + minuets
+                ElseIf Len(minuets) = 0 Then
+                    minuets = "00"
+                End If
+                frmDaySettings.cmbStart.Items.Add(hours + minuets)
+            Next
+
+            'populates the cmbEnd list witht the available times
+            For counter As Integer = (Day.Start + 1) To (Day.finish)
+                'each slot contained between the beginin and the finsish time is converted into 24hour 
+                'military style time
+                hours = (counter \ 12).ToString
+                If Len(hours) = 1 Then
+                    hours = "0" + hours
+                ElseIf Len(hours) = 0 Then
+                    hours = "00"
+                End If
+                minuets = (counter - ((counter \ 12) * 12))
+                minuets = minuets * 5
+                If Len(minuets) = 1 Then
+                    minuets = "0" + minuets
+                ElseIf Len(minuets) = 0 Then
+                    minuets = "00"
+                End If
+                frmDaySettings.cmbEnd.Items.Add(hours + minuets)
+            Next
+        End If
+
+    End Sub
 End Module
