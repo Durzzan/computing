@@ -147,6 +147,7 @@
             End Try
         End While
         'message box is sent saying that the students are imported and how many
+        Nstudents = OnRec
         MsgBox(NStudents & " students imported")
         'file is closed
         FileClose(FileNum)
@@ -233,9 +234,9 @@
                 MsgBox("Line " & ex.Message & "is not valid and will be skipped.")
             End Try
         End While
-        Nstaff = OnRec
+        Nlesson = OnRec
         'sends message box notifying admin that student part of lessons have been imported and how many have been imported
-        MsgBox(Nstaff & " Student half imported")
+        MsgBox("Student half imported")
         FileClose(FileNum)
         TextFileReader.Dispose()
     End Sub
@@ -249,11 +250,9 @@
         Dim lastlesson As Integer = -1
         Dim currentrow As String()
         Dim onrec As Integer = 0
-        Dim filenum As Integer = FreeFile()
 
         OnRec = 0
-        'opens the file
-        FileOpen(filenum, "lesson.dat", OpenMode.Random, OpenAccess.Default, OpenShare.Default, Len(Lesson))
+
         While Not TextFileReader.EndOfData
             Try
                 currentrow = TextFileReader.ReadFields()
@@ -275,8 +274,7 @@
             End Try
         End While
         'sends message box notifying admin that the staff side of lessons have been imported
-        MsgBox("student half imported")
-        FileClose(filenum)
+        MsgBox("staff half imported")
         TextFileReader.Dispose()
 
     End Sub

@@ -76,6 +76,6 @@
     Private Sub btnadmin_Click(sender As System.Object, e As System.EventArgs) Handles btnadmin.Click
         'opens up the admin form and closes the start form
         frmAdmin.Show()
-        Me.Close()
+        Me.Hide()
     End Sub
 End Class

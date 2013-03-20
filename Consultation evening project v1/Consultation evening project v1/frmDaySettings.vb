@@ -69,4 +69,8 @@
         Day.Start = (hours * 12) + minuets
         Call populateStartEndDaySettings()
     End Sub
+
+    Private Sub btnBack_Click(sender As System.Object, e As System.EventArgs) Handles btnBack.Click
+        Me.Close()
+    End Sub
 End Class

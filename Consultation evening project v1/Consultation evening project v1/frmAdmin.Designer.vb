@@ -25,6 +25,7 @@ Partial Class frmAdmin
         Me.btnResent = New System.Windows.Forms.Button()
         Me.btnImport = New System.Windows.Forms.Button()
         Me.btnDay = New System.Windows.Forms.Button()
+        Me.btnBack = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'btnResent
@@ -55,11 +56,21 @@ Partial Class frmAdmin
         Me.btnDay.Text = "Day settings"
         Me.btnDay.UseVisualStyleBackColor = True
         '
+        'btnBack
+        '
+        Me.btnBack.Location = New System.Drawing.Point(316, 260)
+        Me.btnBack.Name = "btnBack"
+        Me.btnBack.Size = New System.Drawing.Size(75, 23)
+        Me.btnBack.TabIndex = 3
+        Me.btnBack.Text = "Back"
+        Me.btnBack.UseVisualStyleBackColor = True
+        '
         'frmAdmin
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(403, 295)
+        Me.Controls.Add(Me.btnBack)
         Me.Controls.Add(Me.btnDay)
         Me.Controls.Add(Me.btnImport)
         Me.Controls.Add(Me.btnResent)
@@ -71,4 +82,5 @@ Partial Class frmAdmin
     Friend WithEvents btnResent As System.Windows.Forms.Button
     Friend WithEvents btnImport As System.Windows.Forms.Button
     Friend WithEvents btnDay As System.Windows.Forms.Button
+    Friend WithEvents btnBack As System.Windows.Forms.Button
 End Class
