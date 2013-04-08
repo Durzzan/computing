@@ -474,7 +474,7 @@
         Day = GetDay(frmDaySettings.cmbDay.SelectedItem)
         If Appointmentlength = 5 Then
             'populates cmbstart with 5 min appointments slots
-            For counter As Integer = Day.Start To (Day.finish - 1)
+            For counter As Integer = 0 To (Day.finish - 1)
                 'each slot contained between the beginin and the finsish time is converted into 24hour 
                 'military style time
                 hours = (counter \ 12).ToString
@@ -494,7 +494,7 @@
             Next
 
             'populates the cmbEnd list witht the available times
-            For counter As Integer = (Day.Start + 1) To (Day.finish)
+            For counter As Integer = (Day.Start + 1) To 287
                 'each slot contained between the beginin and the finsish time is converted into 24hour 
                 'military style time
                 hours = (counter \ 12).ToString
@@ -512,6 +512,47 @@
                 End If
                 frmDaySettings.cmbEnd.Items.Add(hours + minuets)
             Next
+        Else
+            'populates cmbstart with 10 min appointments slots
+            For counter As Integer = 0 To (Day.finish - 1) / 2
+                'each slot contained between the beginin and the finsish time is converted into 24hour 
+                'military style time
+                hours = (counter \ 6).ToString
+                If Len(hours.ToString) = 1 Then
+                    hours = "0" + hours
+                ElseIf hours = 0 Then
+                    hours = "00"
+                End If
+                minuets = (counter - ((counter \ 6) * 6))
+                minuets = minuets * 10
+                If Len(minuets.ToString) = 1 Then
+                    minuets = "0" + minuets
+                ElseIf Len(minuets) = 0 Then
+                    minuets = "00"
+                End If
+                frmDaySettings.cmbStart.Items.Add(hours + minuets)
+            Next
+
+            'populates the cmbEnd list witht the available times
+            For counter As Integer = (Day.Start + 1) To 143
+                'each slot contained between the beginin and the finsish time is converted into 24hour 
+                'military style time
+                hours = (counter \ 6).ToString
+                If Len(hours.ToString) = 1 Then
+                    hours = "0" + hours
+                ElseIf Len(hours.ToString) = 0 Then
+                    hours = "00"
+                End If
+                minuets = (counter - ((counter \ 6) * 6))
+                minuets = minuets * 10
+                If Len(minuets) = 1 Then
+                    minuets = "0" + minuets
+                ElseIf Len(minuets) = 0 Then
+                    minuets = "00"
+                End If
+                frmDaySettings.cmbEnd.Items.Add(hours + minuets)
+            Next
+
         End If
 
     End Sub
