@@ -31,19 +31,67 @@
     Private Sub chklst_ItemCheck(ByVal sender As Object, ByVal e As System.Windows.Forms.ItemCheckEventArgs) Handles chklst.ItemCheck
         Dim parts() As String = Split(chklst.SelectedItem, " ")
         if chklst.selecteditem.checked = true then
-If usertype = 1 Then
-            If appointmentlength = 5 Then
-                For counter As Integer = (parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) To ((parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) + 5)
-for counter1 as integer = 0 to nstudav
-get stud
-StudAv.Appointment = counter
-                    StudAv.DayNO = parts(1)
-                Next
-                for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) + 6 to ((parts(2) \ 100) + (((parts(2)) - (((parts(3)) \ 100) * 100)) / 5) + 11)
+		If usertype = 1 Then
+            		If appointmentlength = 5 Then
+                		For counter As Integer = (parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) To ((parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) + 5)
+					for counter1 as integer = 0 to nstudav
+						getstudav(counter1)
+						if studav.studNO = stud.studno and studAV.appoinment = counter and studAV.day = parts(1) then
+							exit for
+						end if
+					next
+					StudAv.available = true
+                    			StudAv.block += 1
+					putstudav(studav, studav.studavno)
+                		Next
+                		for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) + 6 to ((parts(2) \ 100) + (((parts(2)) - (((parts(3)) \ 100) * 100)) / 5) + 11)
+					for counter1 as integer = 0 to nstudav
+						getstudav(counter1)
+						if studav.studNO = stud.studno and studav.appoinment = counter and studAv.dayno = parts(1) then
+							exit for
+						end if
+					next
+					studav.available = true
+					studav.block +=2
+					putstudav(studav, studav.studavno)
 				next
-            End If
-        End If
-else
-end if
+			else
+				for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) to ((parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) + 4) step 2
+					for counter1 as integer = 0 to nstudav
+						getstudav(counter1)
+						if studav.studNO = stud.studno and studav.appoinment = counter and studav.dayno = parts(1)then
+							exit for
+						end if
+					next
+					studav.available = true
+					studav.block += 1
+					putstudav(studav, studav.studavno)
+				next
+				for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) *100)) / 5)+ 6 to ((parts(2) \ 100) + (((parts(2)) - (((parts(2)) \ 100) *100)) / 5) + 10) step 2
+            				for counter1 as integer = 0 to nstudav
+						getstudav(counter1)
+						if studav.studno = stud.studno and studav.appointment = counter and studav.dayno = parts(1) then
+							exit for
+						end if
+					next
+					studav.available = true
+					studav.block += 2
+					putstudav(studav, studav.studavno)
+				next
+				for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts2)) \ 100) * 100)) / 5) + 12 to ((parts(2) \100 + ((([arts(")) - (((parts(2)) \ 100) * 100)) / 5) +16) step 2
+					for counter1 as integer = 0 to nstudav
+						getstdav(counter1)
+						if studav.studno = stud.studno and studav.appointment = counter and studav.dayno = parts(1) then
+							exit for
+						end if
+					next 
+					studav.abailable = true
+					studav.block += 2
+					putstudav(studav, studav.studavno)
+				next
+			End If
+        	End If
+	else
+	end if
     End Sub
 End Class
