@@ -78,7 +78,7 @@
 					studav.block += 2
 					putstudav(studav, studav.studavno)
 				next
-				for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts2)) \ 100) * 100)) / 5) + 12 to ((parts(2) \100 + ((([arts(")) - (((parts(2)) \ 100) * 100)) / 5) +16) step 2
+				for counter as integer = (parts(2) \ 100) + (((parts(2)) - (((parts2)) \ 100) * 100)) / 5) + 12 to ((parts(2) \100 + (((parts(2)) - (((parts(2)) \ 100) * 100)) / 5) +16) step 2
 					for counter1 as integer = 0 to nstudav
 						getstdav(counter1)
 						if studav.studno = stud.studno and studav.appointment = counter and studav.dayno = parts(1) then
