@@ -24,6 +24,7 @@
     'Student availabity structure
 
     Public Structure StudAvRec
+        public studAVNO as integer
         Public Appointment As Integer
         Public StudNo As Short
         Public DayNO As Byte
@@ -34,6 +35,7 @@
     'staff availability structure
 
     Public Structure StaffAvRec
+        public studAVNO as integer
         Public Appointment As Integer
         Public StaffNO As Byte
         Public DayNO As Byte
