@@ -78,28 +78,22 @@
     <Compile Include="frmAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAvailability.Designer.vb">
+      <DependentUpon>frmAvailability.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAvailability.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmDaySettings.Designer.vb">
       <DependentUpon>frmDaySettings.vb</DependentUpon>
     </Compile>
     <Compile Include="frmDaySettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmStaff.Designer.vb">
-      <DependentUpon>frmStaff.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmStaff.vb">
-      <SubType>Form</SubType>
-    </Compile>
     <Compile Include="frmStart.Designer.vb">
       <DependentUpon>frmStart.vb</DependentUpon>
     </Compile>
     <Compile Include="frmStart.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="frmStudent.Designer.vb">
-      <DependentUpon>frmStudent.vb</DependentUpon>
-    </Compile>
-    <Compile Include="frmStudent.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="mod1.vb" />
@@ -123,17 +117,14 @@
     <EmbeddedResource Include="frmAdmin.resx">
       <DependentUpon>frmAdmin.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAvailability.resx">
+      <DependentUpon>frmAvailability.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmDaySettings.resx">
       <DependentUpon>frmDaySettings.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmStaff.resx">
-      <DependentUpon>frmStaff.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="frmStart.resx">
       <DependentUpon>frmStart.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="frmStudent.resx">
-      <DependentUpon>frmStudent.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>

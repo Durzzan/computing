@@ -5,9 +5,15 @@
         Dim parts() As String = Split(My.User.Name, "\")
         user = parts(1)
 
+        Nstaff = FileLen("staff.dat") / Len(Staff)
+        NStaffAv = FileLen("staffav.dat") / Len(StaffAv)
+        Nstudents = FileLen("students.dat") / Len(student)
+        NStudAv = FileLen("studav.dat") / Len(StudAv)
+        NAppointment = FileLen("appointment.dat") / Len(Appointment)
+        NDay = FileLen("day.dat") / Len(Day)
+        Nlesson = FileLen("lesson.dat") / Len(Lesson)
+
         'checks if the user is a student or a staff member 
-
-
         If Len(user) = 6 Then
             'user is in the form of a students so the list of students is checked
             For counter As Integer = 1 To Nstudents
