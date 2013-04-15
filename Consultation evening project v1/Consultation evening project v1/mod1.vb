@@ -35,7 +35,7 @@
     'staff availability structure
 
     Public Structure StaffAvRec
-        public studAVNO as integer
+        public staffAVNO as integer
         Public Appointment As Integer
         Public StaffNO As Byte
         Public DayNO As Byte
