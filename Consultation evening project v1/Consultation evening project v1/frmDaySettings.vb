@@ -37,7 +37,7 @@
             For counter As Integer = 1 To NDay
                 Day.DayNO = counter
                 Day.Start = 0
-                Day.finish = 287
+                Day.finish = 288
                 Putday(Day, counter)
             Next
         Else
@@ -79,12 +79,12 @@
         cmbStart.Items.Clear()
         Call populateStartEndDaySettings()
         change = True
-        cmbStart.SelectedIndex = Day.Start / 2
+        cmbStart.SelectedIndex = Day.Start / 6
         change1 = True
         If Appointmentlength = 5 Then
-            cmbEnd.SelectedIndex = (Day.finish - 1 - Day.Start)
+            cmbEnd.SelectedIndex = (Day.finish - Day.Start) \ 6 - 2
         Else
-            cmbEnd.SelectedIndex = ((Day.finish - (Day.Start)) \ 2) - 3
+            cmbEnd.SelectedIndex = (Day.finish - Day.Start) \ 6 - 3
         End If
     End Sub
 
@@ -106,27 +106,12 @@
         cmbStart.Items.Clear()
         Call populateStartEndDaySettings()
         change = True
-        cmbStart.SelectedIndex = Day.Start / 2
+        cmbStart.SelectedIndex = Day.Start / 6
         change1 = True
         If Appointmentlength = 5 Then
-            cmbEnd.SelectedIndex = Day.finish - 1 - Day.Start
+            cmbEnd.SelectedIndex = (Day.finish - Day.Start) \ 6 - 2
         Else
-            cmbEnd.SelectedIndex = ((Day.finish - (Day.Start / 2)) \ 2) - 3
+            cmbEnd.SelectedIndex = (Day.finish - Day.Start) \ 6 - 3
         End If
-    End Sub
-
-    Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
-        For counter As Integer = 1 To 5
-            ComboBox1.Items.Add(counter)
-        Next
-    End Sub
-
-    Private Sub ComboBox1_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles ComboBox1.SelectedIndexChanged
-
-    End Sub
-
-    Private Sub Button2_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button2.Click
-        cmbStart.SelectedItem = 1
-
     End Sub
 End Class

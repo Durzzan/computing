@@ -468,92 +468,58 @@
 
     Public Sub populateStartEndDaySettings()
         'populates cmbstart with the times at the required appiontment length apart
-        Dim hours As String = ""
-        Dim minuets As String = ""
         Dim ampm As String = ""
         Day = GetDay(frmDaySettings.cmbDay.SelectedItem)
         If Appointmentlength = 5 Then
             'populates cmbstart with 5 min appointments slots
-            For counter As Integer = 0 To (Day.finish - 1)
+            For counter As Integer = 0 To (Day.finish - 6) Step 6
                 'each slot contained between the beginin and the finsish time is converted into 24hour 
                 'military style time
-                hours = (counter \ 12).ToString
-                If Len(hours) = 1 Then
-                    hours = "0" + hours
-                ElseIf Len(hours) = 0 Then
-                    hours = "00"
-                End If
-                minuets = (counter - ((counter \ 12) * 12))
-                minuets = minuets * 5
-                If Len(minuets) = 1 Then
-                    minuets = "0" + minuets
-                ElseIf Len(minuets) = 0 Then
-                    minuets = "00"
-                End If
-                frmDaySettings.cmbStart.Items.Add(hours + minuets)
+                frmDaySettings.cmbStart.Items.Add(militarytime(counter))
             Next
 
             'populates the cmbEnd list witht the available times
-            For counter As Integer = (Day.Start + 1) To 287
+            For counter As Integer = (Day.Start + 12) To 288 Step 6
                 'each slot contained between the beginin and the finsish time is converted into 24hour 
                 'military style time
-                hours = (counter \ 12).ToString
-                If Len(hours) = 1 Then
-                    hours = "0" + hours
-                ElseIf Len(hours) = 0 Then
-                    hours = "00"
-                End If
-                minuets = (counter - ((counter \ 12) * 12))
-                minuets = minuets * 5
-                If Len(minuets) = 1 Then
-                    minuets = "0" + minuets
-                ElseIf Len(minuets) = 0 Then
-                    minuets = "00"
-                End If
-                frmDaySettings.cmbEnd.Items.Add(hours + minuets)
+                frmDaySettings.cmbEnd.Items.Add(militarytime(counter))
             Next
         Else
             'populates cmbstart with 10 min appointments slots
-            For counter As Integer = 0 To (Day.finish - 1) / 2
+            For counter As Integer = 0 To (Day.finish - 6) Step 6
                 'each slot contained between the beginin and the finsish time is converted into 24hour 
                 'military style time
-                hours = (counter \ 6).ToString
-                If Len(hours.ToString) = 1 Then
-                    hours = "0" + hours
-                ElseIf hours = 0 Then
-                    hours = "00"
-                End If
-                minuets = (counter - ((counter \ 6) * 6))
-                minuets = minuets * 10
-                If Len(minuets.ToString) = 1 Then
-                    minuets = "0" + minuets
-                ElseIf Len(minuets) = 0 Then
-                    minuets = "00"
-                End If
-                frmDaySettings.cmbStart.Items.Add(hours + minuets)
+                frmDaySettings.cmbStart.Items.Add(militarytime(counter))
             Next
 
             'populates the cmbEnd list witht the available times
-            For counter As Integer = (Day.Start + 1) To 143
+            For counter As Integer = (Day.Start + 18) To 288 Step 6
                 'each slot contained between the beginin and the finsish time is converted into 24hour 
                 'military style time
-                hours = (counter \ 6).ToString
-                If Len(hours.ToString) = 1 Then
-                    hours = "0" + hours
-                ElseIf Len(hours.ToString) = 0 Then
-                    hours = "00"
-                End If
-                minuets = (counter - ((counter \ 6) * 6))
-                minuets = minuets * 10
-                If Len(minuets) = 1 Then
-                    minuets = "0" + minuets
-                ElseIf Len(minuets) = 0 Then
-                    minuets = "00"
-                End If
-                frmDaySettings.cmbEnd.Items.Add(hours + minuets)
+                frmDaySettings.cmbEnd.Items.Add(militarytime(counter))
             Next
 
         End If
 
     End Sub
+
+    Public Function militarytime(ByVal timeNO As Integer) As String
+        Dim hours As String
+        Dim minuets As String
+
+        hours = (timeNO \ 12).ToString
+        If Len(hours) = 1 Then
+            hours = "0" + hours
+        ElseIf Len(hours) = 0 Then
+            hours = "00"
+        End If
+        minuets = (timeNO - ((timeNO \ 12) * 12))
+        minuets = minuets * 5
+        If Len(minuets) = 1 Then
+            minuets = "0" + minuets
+        ElseIf Len(minuets) = 0 Then
+            minuets = "00"
+        End If
+        militarytime = hours + minuets
+    End Function
 End Module

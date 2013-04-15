@@ -57,12 +57,8 @@
             Me.Hide()
         Else
             'checks if the user is a student if so it sends them to the student form
-            If usertype = 1 Then
-                frmStudent.Show()
-                Me.Close()
-                'checks if the user is staff if so it sends them to the staff form
-            ElseIf usertype = 2 Then
-                frmStaff.Show()
+            If usertype = 1 Or usertype = 2 Then
+                frmAvailability.Show()
                 Me.Close()
             End If
         End If
