@@ -524,4 +524,10 @@
         End If
         militarytime = hours + minuets
     End Function
+
+    Public Sub TheSortingAlogorithm()
+        For counter As Integer = 0 To Nstudents
+            For counter1 As Integer = 0 To Nlesson
+            Next
+    End Sub
 End Module
