@@ -1,0 +1,467 @@
+# Project Analyzer v10 constant list (constant.txt)
+# Code review rule "Verify accuracy"
+# ©2010-2011 Aivosto Oy <www.aivosto.com>
+#
+# This list includes common floating point constants for detection
+# of inaccurate values in Visual Basic programs.
+# Edit this list to update values and delete confusing constants.
+# To add your own values create a new file as constant2.txt
+# in order to avoid overwriting by a Project Analyzer update.
+#
+# Constant values are current as of 2010
+# Character set: Windows Western codepage (1252)
+# Floating point values only. Integer values will not be used.
+# Precision: 5 to 15 digits (datatype: Double)
+
+
+# Syntax:
+# Constant        Description 
+# Separate constant and description by 1 or more spaces
+
+# Mathematical
+3.14159265358979  pi (VB.NET: Math.Pi)
+6.28318530717959  2*pi (VB.NET: Math.Pi*2)
+2.71828182845905  e, base of natural logarithm (VB.NET: Math.E)
+1.4142135623731   square root of 2
+1.73205080756888  square root of 3
+2.23606797749979  square root of 5
+0.333333333333333 1/3
+0.666666666666667 2/3
+0.166666666666667 1/6
+0.833333333333333 5/6
+0.142857142857143 1/7
+0.285714285714286 2/7
+0.428571428571429 3/7
+0.571428571428571 4/7
+0.714285714285714 5/7
+0.857142857142857 6/7
+0.111111111111111 1/9
+0.222222222222222 2/9
+0.444444444444444 4/9
+0.555555555555556 5/9
+0.777777777777778 7/9
+0.888888888888889 8/9
+9.86960440108936  pi²
+1.5707963267949   pi/2 (VB.NET: Math.Pi/2)
+0.785398163397448 pi/4 (VB.NET: Math.Pi/4)
+0.318309886183791 1/pi
+1.77245385090552  sqr(pi)
+0.707106781186548 sqr(2)/2
+0.367879441171442 1/e
+0.693147180559945 log(2)
+1.09861228866811  log(3)
+1.6094379124341   log(5)
+2.30258509299405  log(10)
+1.1447298858494   log(pi)
+0.301029995663981 log10(2)
+0.698970004336019 log10(5)
+0.434294481903252 log10(e)
+0.497149872694134 log10(pi)
+1.61803398874     golden ratio
+0.577215664901533 gamma, Euler-Mascheroni
+1.32471795724475  plastic number
+1.20205690315959  Apery's constant
+1.902160582       Brun's constant
+0.303663002898733 Gauss-Kuzmin-Wirsing
+0.373955813619202 Artin's constant
+2.80777024202852  Fransén-Robinson
+0.66016181584687  Twin prime constant
+0.261497212847643 Merten's constant
+0.764223653589221 Landau-Ramanujan K
+1.45136923488338  Soldner-Ramanujan
+2.68545200106531  Khintchine's constant
+0.915965594177219 Catalan's constant G
+
+# Measurements
+9.4607304725808E15 Light year (IAU)
+9.460530E15       Light year (old)
+9.460536207E15    Light year (alternative)
+9.460528405E15    Light year (alternative)
+1.98892E30        Solar mass (kg)
+3.08568E16        parsek
+149597870.691     AU, astronomical unit (km)
+
+# Conversion
+1.609344          mile (km)
+1609.344          mile (m)
+0.277777777778    km/h
+1055.05585262     British thermal unit (J)
+4.1868            International Steam Table calorie (J)
+4.184             food calorie (J)
+1.8288            fathom (m)
+28.4130625        fluid ounce, imperial (ml)
+29.5735295625     fluid ounce, US customary (ml)
+4448.22161526     force in kilopounds
+4.44822161526     force in pounds (kg m/s²)
+0.514444444444    knots (m/s)
+133.322368421     mmHg, millimeter of mercury
+0.44704           mph, miles per hour (m/s)
+0.028349523125    ounce (kg)
+28.349523125      ounce (g)
+0.0311034768      troy ounce (kg)
+31.1034768        troy ounce (g)
+568.26125         imperial pint (ml)
+473.176473        US liquid pint (ml)
+550.6104713575    US dry pint (ml)
+0.000352777777778 pt, point (m)
+0.45359237        pound, international (kg)
+0.3732417216      pound, troy (kg)
+453.59237         pound, international (g)
+373.2417216       pound, troy (g)
+425.076           pound, Swedish (g)
+0.946352946       US liquid quart (l)
+1.101220942715    US dry quart (l)
+1.1365225         imperial quart (l)
+4.54609           imperial (UK) gallon (l)
+3.785411784       US liquid gallon (l)
+4.40488377086     US dry gallon (l)
+1016.0469088      UK ton (kg)
+0.9144            yard (m)
+6894.75729317     psi, pound-force per square inch (Pa)
+
+2.01168E1         chain (m)
+6.4516E-4         square inch (m²)
+9.290304E-2       square foot (m²)
+8.3612736E-1      square yard (m²)
+4.0468564224E3    acre (m²)
+2.58998811E6      square mile (m²)
+1.6387064E-5      cubic inch (m³)
+2.8316846E-2      cubic foot (m³)
+7.64554858E-1     cubic yard (m³)
+4.168181825E9     cubic mile (m³)
+5.91939E-8        UK minim (m³)
+9.09218E-3        UK peck (m³)
+3.63687E-2        UK bushel (m³)
+1.589873E-1       US liquid/oil barrel (m³)
+1.18294E-4        gi, gill (m³)
+3.69669E-6        US fluid dram (m³)
+6.16115E-8        US minim (m³)
+8.80977E-3        pk, US dry peck (m³)
+3.52391E-2        bu, US dry bushel (m³)
+1.15627E-1        bbl, US dry barrel (m³)
+6.35029           stone (kg)
+1.27006E1         quarter (kg)
+5.08023E1         hundredweight (kg)
+1.45939E1         slug, gee pound (kg)
+4.53592E1         short hundredweight (kg)
+9.07185E2         short ton (kg)
+6.479891E-5       grain (kg)
+1.29598E-3        scruple (kg)
+3.11035E-2        oz ap, apothecaries ounce (kg)
+1.55517E-3        pennyweight (kg)
+7.35499E2         horsepower, metric (W)
+7.45700E2         hp, horsepower (W)
+-273.15           absolute zero temperature (°C)
+-459.67           absolute zero temperature (°F)
+273.15            absolute zero temperature (°C)
+459.67            absolute zero temperature (°F)
+491.67            °R, Rankine temperature
+
+# Printing
+0.3514598         ATA point (mm)
+0.3514598035      TeX point (mm)
+0.3527777778      PostScript point (mm)
+4.2175176         ATA pica (mm)
+4.217517642       TeX pica (mm)
+4.233333333       PostScript pica (mm)
+4.531             cicero (mm)
+215.9             US letter page width (mm)
+279.4             US letter page height (mm)
+21.59             US letter page width (cm)
+27.94             US letter page height (cm)
+0.2159            US letter page width (m)
+0.2794            US letter page height (m)
+
+# Physical
+6.67259E-11       G, gravitational constant
+9.780327          ge, equatorial surface gravity
+0.0224141         V, molar volume of ideal gas
+1.660538782E27    u, atomic mass unit (2006)
+1.6021773E-19     eV, electronvolt
+9.28476362E-24    electron magnetic moment (A m²)
+96.485            Faraday constant (kJ/V/g)
+23.061            Faraday constant (kcal/V/g)
+8.987551787E9     Coulomb's constant
+1.25663706144E-6  vacuum permeability
+8.854187817E-12   e0, electric constant, vacuum permittivity
+12.566370614E-7   µ0, magnetic constant
+
+# The next constants are from NIST
+#
+# Source: Fundamental Physical Constants --- Complete Listing
+#         http://physics.nist.gov/constants
+#         as of 2010
+
+# Constant        Description
+-0.0004664345537  deuteron-electron mag. mom. ratio
+-0.00104187563    neutron mag. mom. to Bohr magneton ratio
+-0.001158671471   shielded helion mag. mom. to Bohr magneton ratio
+-0.001620514423   triton-electron mag. mom. ratio
+-0.00484197049    muon mag. mom. to Bohr magneton ratio
+-0.44820652       deuteron-neutron mag. mom. ratio
+-0.68497934       neutron-proton mag. mom. ratio
+-0.68499694       neutron to shielded proton mag. mom. ratio
+-0.761766558      shielded helion to proton mag. mom. ratio
+-0.7617861313     shielded helion to shielded proton mag. mom. ratio
+-1.00115965218111 electron mag. mom. to Bohr magneton ratio
+-1.074552982E-26  shielded helion mag. mom. [J/T]
+-1.1517047        Sackur-Tetrode constant (1 K, 100 kPa)
+-1.1648677        Sackur-Tetrode constant (1 K, 101.325 kPa)
+-1.45989806       proton-neutron mag. mom. ratio
+-1.55718553       triton-neutron mag. mom. ratio
+-1.91304273       neutron mag. mom. to nuclear magneton ratio
+-1838.28197092    electron mag. mom. to nuclear magneton ratio
+-2.0023193043622  electron g factor
+-2.0023318414     muon g factor
+-2.127497718      shielded helion mag. mom. to nuclear magneton ratio
+-2143.923498      electron-deuteron mag. mom. ratio
+-3.183345137      muon-proton mag. mom. ratio
+-3.82608545       neutron g factor
+-4.49044786E-26   muon mag. mom. [J/T]
+-658.2106848      electron-proton mag. mom. ratio
+-658.2275971      electron to shielded proton mag. mom. ratio
+-8.89059705       muon mag. mom. to nuclear magneton ratio
+-9.28476377E-24   electron mag. mom. [J/T]
+-9.6623641E-27    neutron mag. mom. [J/T]
+0.0001134289256   muon molar mass [kg/mol]
+0.00013709335557  electron to alpha particle mass ratio
+0.00027244371093  electron-deuteron mass ratio
+0.000287564       electron-tau mass ratio
+0.00036369475199  quantum of circulation [m²/s]
+0.00036582637     nuclear magneton in K/T
+0.0004669754556   deuteron mag. mom. to Bohr magneton ratio
+0.00054386734459  electron-neutron mass ratio
+0.00054461702177  electron-proton mass ratio
+0.00054857990943  electron mass in u
+0.000727389504    quantum of circulation times 2 [m²/s]
+0.00100727646677  proton molar mass [kg/mol]
+0.00100866491597  neutron molar mass [kg/mol]
+0.00104066882     neutron-electron mag. mom. ratio
+0.00115965218111  electron mag. mom. anomaly
+0.00116592069     muon mag. mom. anomaly
+0.001520993128    shielded proton mag. mom. to Bohr magneton ratio
+0.001521032209    proton mag. mom. to Bohr magneton ratio
+0.001622393657    triton mag. mom. to Bohr magneton ratio
+0.00190768        tau molar mass [kg/mol]
+0.002013553212724 deuteron molar mass [kg/mol]
+0.0028977685      Wien wavelength displacement law constant [m K]
+0.0030149322473   helion molar mass [kg/mol]
+0.0030155007134   triton molar mass [kg/mol]
+0.004001506179127 alpha particle molar mass [kg/mol]
+0.00483633171     electron-muon mass ratio
+0.00662361763     atomic unit of current [A]
+0.0072973525376   fine-structure constant
+0.014387752       inverse meter-kelvin relationship [K], second radiation constant [m K]
+0.022413996       molar volume of ideal gas (273.15 K, 101.325 kPa) [m³/mol]
+0.022710981       molar volume of ideal gas (273.15 K, 100 kPa) [m³/mol]
+0.02542623616     nuclear magneton in inverse meters per tesla [1/(m T)]
+0.0367493254      electron volt-hartree relationship [E_h]
+0.0594592         muon-tau mass ratio
+0.1124545167      muon-neutron mass ratio
+0.1126095261      muon-proton mass ratio
+0.1134289256      muon mass in u
+0.11962656472     molar Planck constant times c [J m/mol]
+0.22255           weak mixing angle
+0.307012207       deuteron-proton mag. mom. ratio
+0.51099891        electron mass energy equivalent in MeV, natural unit of energy in MeV, natural unit of momentum in MeV/c
+0.528012          proton-tau mass ratio
+0.52874           neutron-tau mass ratio
+0.6717131         Bohr magneton in K/T
+0.8574382308      deuteron g factor, deuteron mag. mom. to nuclear magneton ratio
+0.99862347824     proton-neutron mass ratio
+1.00001498E-10    Angstrom star [m]
+1.00137841918     neutron-proton mass ratio
+1.00207699E-13    Cu x unit [m]
+1.00209955E-13    Mo x unit [m]
+1.00727646677     proton mass in u
+1.00866491597     neutron mass in u
+1.054571628E-34   atomic unit of action [J s], natural unit of action [J s], Planck constant over 2 pi [J s]
+1.066639908       triton-proton mag. mom. ratio
+1.073544188E-09   electron volt-atomic mass unit relationship [u]
+1.11046E-16       tau Compton wavelength over 2 pi [m]
+1.112650056       atomic unit of permittivity [F/m], joule-kilogram relationship [kg]
+1.16637E-05       Fermi coupling constant [1/GeV²]
+1.173444104E-14   muon Compton wavelength [m]
+1.191042759E-16   first radiation constant for spectral radiance [W m²/sr]
+1.20588349E-05    molar volume of silicon [m³/mol]
+1.220892E19       Planck mass energy equivalent in GeV
+1.239841875E-06   inverse meter-electron volt relationship [eV]
+1.288088657E-21   natural unit of time [s]
+1.3195908951E-15  neutron Compton wavelength [m]
+1.3214098446E-15  proton Compton wavelength [m]
+1.3310250394E-15  inverse meter-atomic mass unit relationship [u]
+1.356392733E50    kilogram-hertz relationship [Hz]
+1.3806504E-23     Boltzmann constant [J/K], kelvin-joule relationship [J]
+1.410570419E-26   shielded proton mag. mom. [J/T]
+1.410606662E-26   proton mag. mom. [J/T]
+1.416785E32       Planck temperature [K]
+1.49241783E-10    atomic mass constant energy equivalent [J], atomic mass unit-joule relationship [J]
+1.503277359E-10   proton mass energy equivalent [J]
+1.504609361E-26   triton mag. mom. [J/T]
+1.505349505E-10   neutron mass energy equivalent [J]
+1.50919045E33     joule-hertz relationship [Hz]
+1.5361807E-40     kelvin-kilogram relationship [kg]
+1.602176487E-19   atomic unit of charge [C], electron volt [J], electron volt-joule relationship [J], elementary charge [C]
+1.616252E-35      Planck length [m]
+1.6487772536E-41  atomic unit of electric polarizability [C² m²/J]
+1.660538782E-27   atomic mass constant [kg], atomic mass unit-kilogram relationship [kg], unified atomic mass unit [kg]
+1.672621637E-27   proton mass [kg]
+1.674927211E-27   neutron mass [kg]
+1.69283351E-11    muon mass energy equivalent [J]
+1.782661758E-36   electron volt-kilogram relationship [kg]
+1.85480183E-23    atomic unit of mag. dipole mom. [J/T]
+1.867594295E-15   muon Compton wavelength over 2 pi [m]
+1.8835313E-28     muon mass [kg]
+1.89129           tau-neutron mass ratio
+1.8939            tau-proton mass ratio
+1.90768           tau mass in u
+1.920155762E-10   {220} lattice spacing of silicon [m]
+1.986445501E-25   inverse meter-joule relationship [J]
+1.992851565E-24   atomic unit of momentum [kg m/s]
+1.99900750108     deuteron-proton mass ratio
+105.6583668       muon mass energy equivalent in MeV
+10973731.568527   Rydberg constant [1/m]
+11604.505         electron volt-kelvin relationship [K]
+12.566370614      mag. constant [N/A²]
+12906.4037787     inverse of conductance quantum [ohm]
+13.60569193       Rydberg constant times hc in eV
+137.035999679     inverse fine-structure constant
+16.8183           tau-muon mass ratio
+1776.99           tau mass energy equivalent in MeV
+1836.15267247     proton-electron mass ratio
+1838.6836605      neutron-electron mass ratio
+1875.612793       deuteron mass energy equivalent in MeV
+197.3269631       Planck constant over 2 pi times c in MeV fm [MeV fm]
+2.013553212724    deuteron mass in u
+2.06148616E34     kilogram-hartree relationship [E_h]
+2.067833667E-15   mag. flux quantum [Wb]
+2.1001941382E-16  neutron Compton wavelength over 2 pi [m]
+2.1030890861E-16  proton Compton wavelength over 2 pi [m]
+2.1402E-15        deuteron rms charge radius [m]
+2.17644E-08       Planck mass [kg]
+2.17987197E-18    Rydberg constant times hc in J
+2.2102187E-42     inverse meter-kilogram relationship [kg]
+2.2523427369E23   atomic mass unit-hertz relationship [Hz]
+2.29371269E17     joule-hartree relationship [E_h]
+2.4263102175E-12  Compton wavelength [m]
+2.5694E-05        proton mag. shielding correction
+2.6867774E25      Loschmidt constant (273.15 K, 101.325 kPa) [1/m³]
+2.73092406E-22    natural unit of momentum [kg m/s]
+2.792775598       shielded proton mag. mom. to nuclear magneton ratio
+2.792847356       proton mag. mom. to nuclear magneton ratio
+2.8179402894E-15  classical electron radius [m]
+2.84705E-10       tau mass energy equivalent [J]
+2.9212622986E-08  hartree-atomic mass unit relationship [u]
+2.978962448       triton mag. mom. to nuclear magneton ratio
+2.9931526713      helion-proton mass ratio
+2.9937170309      triton-proton mass ratio
+206.7669877       electron-muon mag. mom. ratio
+206.7682823       muon-electron mass ratio
+2187691.2541      atomic unit of velocity [m/s]
+21947463.13705    hartree-inverse meter relationship [1/m]
+235051.7382       atomic unit of mag. flux density [T]
+25812.807         conventional value of von Klitzing constant [ohm]
+25812.807557      von Klitzing constant [ohm]
+267515336.2       shielded proton gyromag. ratio [1/(s T)]
+267522209.9       proton gyromag. ratio [1/(s T)]
+27.21138386       atomic unit of electric potential [V], hartree-electron volt relationship [eV], Hartree energy in eV
+28024.95364       electron gyromag. ratio over 2 pi [MHz/T]
+2808.391383       helion mass energy equivalent in MeV
+2808.920906       triton mass energy equivalent in MeV
+29.1646954        neutron gyromag. ratio over 2 pi [MHz/T]
+3.00506272E-10    deuteron mass energy equivalent [J]
+3.0149322473      helion mass in u
+3.0155007134      triton mass in u
+3.1524512326E-08  nuclear magneton in eV/T
+3.1668153E-06     kelvin-hartree relationship [E_h]
+3.16777E-27       tau mass [kg]
+3.206361533E-53   atomic unit of 1st hyperpolarizability [C³ m³ J^-2]
+3.289841960361E15 Rydberg constant times c in Hz
+3.335640951       hertz-inverse meter relationship [1/m]
+3.3435832E-27     deuteron mass [kg]
+3.74177118E-16    first radiation constant [W m²]
+3.8615926459E-13  Compton wavelength over 2 pi [m], natural unit of length [m]
+3.97259968951     alpha particle-proton mass ratio
+3.9903126821E-10  molar Planck constant [J s/mol]
+315774.65         hartree-kelvin relationship [K]
+32.43410198       shielded helion gyromag. ratio over 2 pi [MHz/T]
+34231777.149      atomic mass unit-hartree relationship [E_h]
+3477.48           tau-electron mass ratio
+3670.4829654      deuteron-electron mass ratio
+3727.379109       alpha particle mass energy equivalent in MeV
+376.730313461     characteristic impedance of vacuum [ohm]
+4.001506179127    alpha particle mass in u
+4.13566733E-15    hertz-electron volt relationship [eV], Planck constant in eV s [eV s]
+4.33073465E-27    deuteron mag. mom. [J/T]
+4.35974394E-18    atomic unit of energy [J], Hartree energy [J], hartree-joule relationship [J]
+4.4398216294E-24  hertz-atomic mass unit relationship [u]
+4.48655107E-40    atomic unit of electric quadrupole mom. [C m²]
+4.49953864E-10    helion mass energy equivalent [J]
+4.50038703E-10    triton mass energy equivalent [J]
+4.52443915E41     kilogram-inverse meter relationship [1/m]
+4.55633525276E-08 inverse meter-hartree relationship [E_h]
+4.7992374E-11     hertz-kelvin relationship [K]
+4.85086934E-35    hartree-kilogram relationship [kg]
+42.5763881        shielded proton gyromag. ratio over 2 pi [MHz/T]
+42.5774821        proton gyromag. ratio over 2 pi [MHz/T]
+46.6864515        Bohr magneton in inverse meters per tesla [1/(m T)]
+5.00641192E-27    helion mass [kg]
+5.00735588E-27    triton mass [kg]
+5.03411747E24     joule-inverse meter relationship [1/m]
+5.05078324E-27    nuclear magneton [J/T]
+5.2917720859E-11  atomic unit of length [m], Bohr radius [m]
+5.39124E-44       Planck time [s]
+5.43102064E-10    lattice parameter of silicon [m]
+5.4857990943E-07  electron molar mass [kg/mol]
+5.585694713       proton g factor
+5.60958912E35     kilogram-electron volt relationship [eV]
+5.6704E-08        Stefan-Boltzmann constant [W m^-2 K^-4]
+5.7883817555E-05  Bohr magneton in eV/T
+5.957924896       triton g factor
+5.97191917E-10    alpha particle mass energy equivalent [J]
+5495.8852765      helion-electron mass ratio
+5496.9215269      triton-electron mass ratio
+6.02214179E23     Avogadro constant [1/mol]
+6.02214179E26     kilogram-atomic mass unit relationship [u]
+6.23538095E-65    atomic unit of 2nd hyperpolarizability [C^4 m^4 J^-3]
+6.24150965E18     joule-electron volt relationship [eV]
+6.509651E39       kilogram-kelvin relationship [K]
+6.579683920722E15 hartree-hertz relationship [Hz]
+6.58211899E-16    natural unit of action in eV s [eV s], Planck constant over 2 pi in eV s [eV s]
+6.62606896E-34    hertz-joule relationship [J], Planck constant [J s]
+6.6446562E-27     alpha particle mass [kg]
+6.652458558E-29   Thomson cross section [m²]
+6.67428E-11       Newtonian constant of gravitation [m³ kg^-1 s^-2]
+6.70881E-39       Newtonian constant of gravitation over h-bar c [(GeV/c²)^-2]
+6.9772E-16        tau Compton wavelength [m]
+69.50356          Boltzmann constant in inverse meters per kelvin [1/(m K)], kelvin-inverse meter relationship [1/m]
+7.242963E22       joule-kelvin relationship [K]
+7.372496E-51      hertz-kilogram relationship [kg]
+7.62259384        nuclear magneton in MHz/T
+7.7480917004E-05  conductance quantum [S]
+7.891036433E-29   atomic unit of magnetizability [J/T²]
+7294.2995365      alpha particle-electron mass ratio
+8.18710438E-14    electron mass energy equivalent [J], natural unit of energy [J]
+8.23872206E-08    atomic unit of force [N]
+8.314472          molar gas constant [J mol^-1/K]
+8.47835281E-30    atomic unit of electric dipole mom. [C m]
+8.617343E-05      Boltzmann constant in eV/K, kelvin-electron volt relationship [eV]
+8.768E-16         proton rms charge radius [m]
+8.854187817       electric constant [F/m]
+8.88024339        proton-muon mass ratio
+8.89248409        neutron-muon mass ratio
+8.987551787       kilogram-joule relationship [J]
+806554.465        electron volt-inverse meter relationship [1/m]
+864.058257        electron to shielded helion mag. mom. ratio
+9.10938215E-31    atomic unit of mass [kg], electron mass [kg], natural unit of mass [kg]
+9.251098E-14      kelvin-atomic mass unit relationship [u]
+9.27400915E-24    Bohr magneton [J/T]
+9.71736166E21     atomic unit of electric field gradient [V/m²]
+9.80665           standard acceleration of gravity [m/s²]
+931.494028        atomic mass constant energy equivalent in MeV
+938.272013        proton mass energy equivalent in MeV
+939.565346        neutron mass energy equivalent in MeV
+95788339.2        proton charge to mass quotient [C/kg]
+960.9205          electron-neutron mag. mom. ratio
+96485.3399        Faraday constant [C/mol]
+96485.3401        Faraday constant for conventional electric current [C_90/mol]

@@ -1,0 +1,679 @@
+Project Analyzer version history
+
+Major version history
+=====================
+
+v10.0 (Nov 2010) VB.NET 2010. Office 2010. Analyze logic & .NET assemblies.
+ v9.0 (Oct 2008) VB.NET 2008. Flaw finder. Analyze directory. PDF output.
+ v8.1 (Feb 2007) VBA Plug v2/Office 2007. Print code. XML metrics.
+ v8.0 (Feb 2006) VB.NET 2005, Enterprise Diagrams
+ v7.1 (Sep 2004) VBA Plug
+ v7.0 (Aug 2003) VB.NET 2003, duplicate code, dead control and DLL analysis
+ v6.2 (Jan 2003) Ctrl & data flow & form show graphs. Ensure obj clear. 
+ v6.1 (Aug 2002) Multi-project analysis for .sln, .vbg and COM 
+ v6.0 (May 2002) VB.NET 2002 support
+ v5.4 (May 2001) VB.NET compatibility check
+ v5.3 (Jan 2001) Enterprise Edition with auto-fix and macros
+ v5.2 (Mar 2000) Project NameCheck, support for non-western code
+ v5.1 (May 1999) Problem detection, code web site, new reports
+ v5.0 (Oct 1998) VB 6.0 support
+ v4.2 (Aug 1998) Need report
+ v4.1 (Jan 1998) Project Graph
+ v4.0 (Sep 1997) VB 3.0-5.0 support
+
+
+Detailed version history
+========================
+
+v10.0.07 January 2013
+        *** Bug fix ***
+        1. Problem option "Magic number" was not correctly stored. 
+           (Guenter Schramm)
+
+v10.0.06 October 2012
+        *** Improvements ***
+        1. Supports high-density displays. 
+           (Example: Windows 7, font size "Larger 150%")
+        2. Uses smoother ClearType enabled font in dialogs.
+           (Microsoft Sans Serif replaces MS Sans Serif when available)
+
+        *** Bug fixes ***
+        1. Fixed Super Project Analyzer where it displayed an empty title
+           for "Analyze directory" projects.
+        2. Fixed splitter bar ghosting problem.
+        3. Some dialogs adjusted and glitches fixed.
+
+v10.0.05 November 2011
+        *** Improvement ***
+        1. Added some constants to "Verify accuracy" rule 
+           in file constant.txt
+
+        *** Bug fixes ***
+        1. Fixed crash opening dialog "Export code as PDF".
+           (Jorma Tuppurainen)
+        2. Fixed missing "Unreachable code" at the end of procedures.
+           (Michael Heeg)
+        3. Fixed constant e in file constant.txt
+
+v10.0.04 May 2011
+        *** Improvement ***
+        1. For problems related to fields, such as "Dead type field", 
+           the type name is listed along with the field name to help
+           telling apart fields in different types. (Bob Vesterman)
+
+        *** Bug fixes ***
+        1. Fixed bug with syntax where colon follows a statement
+           consisting of a single keyword. (Rob Eggins)
+           Else:
+           Loop:
+           Next: 
+           Wend:
+           End: Stop: Resume: Return:
+           Print: Close: Randomize: 
+           Do: (this one was already working ok)
+        2. Problem Options did not correctly persist. (Bob Vesterman)
+           - WithEvents adds overhead
+           - Events not handled
+
+v10.0.03 January 2011
+        *** Bug fixes ***
+        1. Fixed #28 Out of stack space during phase 2/2. Happened where
+           variable name reappeared in initializer: Dim x = CType(.., x)
+           (Lynn Owens)
+        2. Fixed #28 Out of stack space at end of phase 2/2 (status 8).
+           Happened with long procedures. (Lynn Owens)
+
+v10.0.02 January 2011
+        *** Bug fixes ***
+        1. Fixed #28 Out of stack space with excessively large
+           procedures during phase 2/2.
+        2. Fixed Project Metrics Viewer errors with excessively large
+           metric values (IC1).
+
+v10.0.01 November 2010
+        *** Major new features ***
+        1. VB.NET 2010 support. 
+           Analyze all code written in VB 3-6 and VB.NET 2002-2010.
+        2. Office 2010 VBA support.
+           Analyze VBA code of Office 2000-2010 with VBA Plug v3.
+        3. New code review rules (31 of them)
+           Find bad coding logic. List below.
+        4. New reports (6 of them)
+           Listings, xrefs and string literals. List below.
+        5. Analyze .NET assemblies.
+           References to the .NET Framework and other library files 
+           are now analyzed. Enterprise Edition only.
+        6. Visio 2010 support.
+           Export Enterprise Diagrams to Visio 2002-2010. 
+           Enterprise Edition only.
+
+        *** New code review rules (31 rules) ***
+         - Magic number found
+           A numeric literal is not defined as a constant.
+         - Verify accuracy
+           A floating point constant may be imprecise.
+         - Optional parameter never passed a value
+           An Optional parameter is never passed as a call argument.
+         - Empty block
+           This rule reports empty blocks such as If, Else, Catch.
+         - Slow ^ operator found
+           Replace ^ by one or more multiplications.
+         - CreateObject found
+           Use "As New" early binding instead of late binding.
+         - Possibly orphaned event handler
+           Sub no longer handles any events.
+         - Event handler called directly
+           Event handlers should not be explicitly called.
+         - Implementation called directly
+           Should not call a procedure that implements an interface.
+         - Event handler should be Private
+           Prevent other modules from calling it directly.
+         - Implementation should be Private
+           Prevent other modules from calling it directly.
+         - Non-instantiatable class has instance members
+           Instance members are inaccessible.
+         - Class/Structure nested inside Interface
+           Bad programming style.
+         - Unreachable code found
+           A block of code never executes because it is not reachable.
+         - Variable read before written (along some path)
+           Potential logic mistake.
+         - Variable read before written
+           Variable always contains its default value at this point.
+         - Object read before written (along some path)
+           Run-time error (null pointer reference) could occur.
+         - Object read before written
+           Run-time error (null pointer reference) is likely.
+         - Assigned value not used
+           Useless assignment, check logic.
+         - Assigned object not used
+           Useless assignment, check logic.          
+         - Parameter value not used
+           Logic flaw: Parameter is overwritten before ever read.
+         - Passed value not used
+           Receiving procedure doesn't use a value. Could optimize.
+         - Loop runs only once
+           Potential logic flaw. Why loop just 1 time?
+         - Loop runs forever
+           No reachable exit from this loop. Potential jam.
+         - Condition always True or False at run-time
+           Statement is unconditional due to run-time conditions.
+         - Rewrite Sub as Function
+           Use return value instead of 'out' parameter.
+
+        New review rules that replace old rules:
+         - Microsoft.VisualBasic.Compatibility imported 
+           Replaces old rule "Microsoft.VisualBasic imported"
+           The Compatibility namespace is a style problem while the 
+           VisualBasic namespace is not. (reported by Eric Burdo)
+         - Conditional block excluded
+           #If or #Else block condition is False.
+           Replaces old rule "Conditional block will not upgrade to 
+           VB.NET" and is now available in all editions.
+
+        3 rules replace old rule "Return and Exit statement found":
+         - Exit Sub|Function|Property found
+         - Exit statement found (other Exit statements)
+         - Return statement found (VB.NET)
+           (idea by Martin Baum)
+
+
+        *** Code review rules changed ***
+        1. Short name: 
+           - New option to allow single-character local variables 
+             (i, j, k...) used as For index variables. 
+           - Removed option to allow single-character local integers.
+           - Allow e As System.EventArgs in VB.NET
+           - Allow Catch ex [As Exception] in VB.NET
+           - Allow any parameter length in DLL declarations
+           - Allow numeric x and y used as a pair of parameters or local
+             variables.
+           - Report short names of Enum constants and Type fields.
+        2. Initializer missing for variable:
+           - Now raised for Shared fields of a Structure
+        3. Dead variable: Variables in VB.NET Structures marked with
+           <ComVisible(True)> are exposed. They may be used via COM
+           and are not reported as dead code unnecessarily.
+        4. ByVal parameter written to:
+           - Shows up at every location where a write happens.
+           - Doesn't show up where a potential write can't be verified.
+        5. Conditional error handling is no longer reported as a missing
+           error handler. Example of an acceptable error handler:
+           If Not DebugMode Then On Error Goto x
+        6. Default member variables are no longer reported as dead code.
+        7. Problem list to show max 20,000 problems at a time.
+
+        *** New reports ***   
+        1. Variable list. Shows all variables and data type summary.
+        2. Constant list. Shows all constants and data type summary.
+        3. Procedure references report: Shows procedure call sites.
+        4. Variable references report: Shows access to each variable.
+        5. Constant references report: Shows access to each constant.
+        6. String literal report: Shows all string literals with
+           context. Lists all strings alphabetically, ready for copying 
+           to a translator or a spell checker.
+
+        *** Report improvements ***
+        1. File list with details improved.
+        2. Procedure list: Added color. Removed binary procedures.
+        3. String literal analysis: Added color.
+        4. Variable use report sorted alphabetically and clarified.
+        5. Files and projects report can accommodate more projects.
+        6. Problem report by location: Files sorted alphabetically.
+        7. VB.NET compatibility report considers issues with dead code.
+        8. Summary report and Design Quality report improved.
+        9. PDF reports: Line wrapping improved.
+        10.PDF reports saved from Display window include page headers
+           and a PDF outline (instead of TOC).
+        11.Module interface report: Sorted hierarchically.
+        12.Module members report: Sorted hierarchically.
+
+        *** New metrics ***
+        1. dUDTS   Dead user-defined types
+        2. dENUMS  Dead Enums
+        3. dENUMCS Dead Enum constants
+        4. SDENS   Statement density. SDENS=STMT/LLOC
+
+        *** Other improvements ***
+        1. Find duplicate code improved:
+           - find case-insensitively (request of Richard Brooker)
+           - return duplicates within a single file as well
+        2. Archive feature rewritten.
+        3. Project Metrics .mtx files are now considerably smaller.
+        4. New comment directive options:
+           IN_THIS_PROJECT affects all files in project
+           ANYWHERE affects all files in analysis
+           WHERE expression affects all lines containing expression
+        5. Syntax errors with comment directives now displayed.
+        6. Considerable performance boost with large XML literals.
+        7. Project Metrics reports are now encoded in UTF-8.
+
+        *** Analysis improvements ***
+        1. Improved detection of default member references.
+        2. Improved detection of COM in/out ByRef parameters.
+        3. Improved accuracy of Overloads resolution.
+        4. Improved accuracy of type inference.
+        5. Improved support of [keyword] syntax.
+        6. Improved support of {..} syntax.
+        7. Improved <Extension()> method support.
+        8. Improved handling of generic types.
+        9. Syntax obj=value is no longer treated as a write to obj 
+           in classic VB. Writing requires the Set obj=value syntax.
+        10.Letting a new value to an object's default property is now
+           analyzed more accurately. Syntax obj=value in classic VB.
+        11.Added support (no functionality) for XML Axis Properties:
+           .<tag> and ...<tag> and .@<attrib>
+        12.Added support for Widening Operator CType conversions in
+           overloaded calls.
+
+        *** Bug fixes ***
+        1. Fixed Procedure list with details. 
+           #Compiler directive lines were sometimes appearing 
+           instead of procedure header.
+        2. Fixed 2 errors with XAML .g.vb files (with VB2008 SP1):
+           File not up-to-date, rebuild project
+           File not found, rebuild project
+        3. Fixed support for #If and #ElseIf without Then.
+        4. Fixed several issues with generic type parameters (Of T).
+        5. Fixed hang with Procedure call tree (all procedures).
+        6. Fixed rules "Case overlap" and "Case useless": bug if
+           Case statement was followed by a comment.
+        7. Fixed rule "Case useless": Case 1 To 3 followed by Case 2 
+           was incorrectly reported as "Case overlap" and not "useless".
+        8. "For Each x In y" is treated as a write instruction to x, 
+           no longer as a write+read.
+        9. Fixed error with projects having a project-level compilation
+           constants setting longer than 255 characters.
+        10.In the hypertext view, if you had two different definitions 
+           with the same name (e.g. Form1.MyVar and Form2.MyVar), both
+           could have been highlighted in red. Now clicking on either
+           MyVar will only display the selected MyVar in red.
+        11.Reports will be created under the system TEMP directory 
+           by default. Fixes UAC problems writing to Program Files
+           folder. User can define any other directory for reports.
+        12.Problems are now hidden for some generated .Designer.vb files
+           that were erroneously treated as regular non-generated code.
+        13.Fixed auto-fix bug with '! If..Then split: 
+           End If was incorrectly placed before If. (Gaby Weizman)
+        14.Fixed auto-fix bug with "" being replaced by vbNullString
+           where "" was a quotation mark.
+        15.Fixed Project Metrics "Project in time" tab, where case
+           differences in a name would hide some values for the 
+           selected file, class, procedure or variable.
+
+        *** Replaced features and breaking changes ***
+        1. Variables and constants report has been replaced by
+           Variable list and Constant list.
+        2. Macro "Report VarsNConsts" now unsupported. Replace by:
+           Report Variables
+           Report Constants
+        3. Macro command Analyze supports new parameter BIN.
+           Parameter COM is obsoleted but supported.
+        4. Project Metrics .html report format changed. This only
+           affects you if you parse the reports programmatically.
+        5. Auto-fix replacement of "" with vbNullString has been
+           disabled in VB.NET. Use of vbNullString may cause subtle
+           run-time bugs in VB.NET.
+
+
+v9.0.11 June 2010
+        *** Bug fixes ***
+        1. Fixed extra "Could move to" instruction with "Excess scope"
+           problem for a Public Const used in its own declarations 
+           section only (Jan Polonský)
+        2. Fixed font size issue in Problem Options (Tom Owen)
+        3. Fixed Windows 7 font size issue with VBA Plug (Nick Hewett)
+
+v9.0.10 March 2010
+        *** Improvements ***
+        1. Added possibility to print an icon.
+
+        *** Bug fixes ***
+        1. Fixed Error #13 at startup / ClearRegistryExtra: Type
+           mismatch (Jorma Tuppurainen)
+        2. Fixed display glitches on high resolution displays,
+           Vista/Windows 7 high DPI settings. (Tom Owen)
+        3. Workaround for font size issue in Problem Options (Tom Owen)
+        4. Fixed bug with VB2008 code that uses an <attribute> 
+           for a parameter. (Jan Polonský)
+        5. Removed "0 writes" message from constants. (Jan Polonský)
+
+v9.0.09 January 2010
+        *** Bug fixes ***
+        1. Fixed Error #6 at startup / Splash: Overflow (Mike Hillman)
+           Also fixed Project Printer and About box crash on a system
+           with 2 large monitors (approx 1920 pixels wide).
+        2. Fixed hang in Export code as PDF.
+        3. Fixed errors outputting very large PDF.
+
+v9.0.08 January 2010
+        *** Improvements ***
+        1. Need report accuracy improved. Where individual constants of
+           an Enum are required (instead of the entire Enum), only the 
+           required constants are listed. In addition, the module of
+           that Enum is listed in the Modules required section. The same
+           improvement also applies to individual fields of a Type.
+        2. Problem "GoTo/GoSub statement found" now displays target
+           line. (idea by Martin Baum)
+        3. Added support for VBA Option Private Module statement.
+        4. Added support for VB.NET Partial Private Sub.
+
+        *** Bug fixes ***
+        1. Fixed REM keyword in VB.NET. REM can exist at any column.
+        2. Fixed Need report column #1 of Variables section in PDF mode.
+
+v9.0.07 September 2009
+        *** Bug fixes ***
+        1. Fixed crash opening the File menu.
+        2. Fixed preferred directory for temporary files (TEMP).
+
+v9.0.06 September 2009
+        *** Improvements ***
+        1. PDF reports optimized for file size. Added support for many
+           national characters including Japanese, Chinese and Korean.
+        2. Hex view to display max 2048 lines instead of 1024.
+
+        *** Bug fixes ***
+        1. Fixed startup error '5': Invalid procedure call or argument.
+        2. Fixed PDF reports: general bugs, national characters in
+           outline.
+
+v9.0.05 May 2009
+        *** Improvements ***
+        1. Lifted limit of 32767 controls.
+        2. Speed optimizations.
+
+        *** Bug fixes ***
+        1. Fixed "Error #7: Out of memory" at end of phase 1/2 when
+           analyzing very large systems.
+        2. Fixed property references to COM files being ignored.
+        3. Fixed precedence bug with a COM library and a VB project
+           declaring the same name. Now VB names always take precedence.
+           (Klaus Lair)
+        4. Fixed Overflow in phase 2/2 with #-character syntax such as 
+           Case 3456000000# To 63115200000# (John Crellin)
+        5. Fixed date/time literal evaluation bugs.
+        6. Fixed date/time literal evaluation earlier than #12/30/1899#
+        7. Added error message when analyzing more than 32767 files.
+
+v9.0.04 March 2009
+        *** Bug fixes ***
+        1. Fixed "Error #13: Type mismatch" in phase 2/2. (Robin Bailey)
+        2. Local constants are properly evaluated for rules such as 
+           Condition always True.
+        3. Some auto-generated .g.vb files were not analyzed, causing
+           extra dead code warnings with XAML forms. (Gunnar Syrén)
+
+v9.0.03 February 2009
+        *** Bug fixes ***
+        1. In VB2005 and later, regular .exe projects can be referenced 
+           by external projects. This fix removes unnecessary dead code 
+           problems, but may cause new "dead but exposed" warnings.
+           (Jeremy Yoder)
+        2. Problem filter <Dead code + exposed> automatically changed
+           to <Dead>. Fixed.
+        3. Fixed 'This program might not have installed correctly' after 
+           Configuration (config.exe) in Windows Vista.
+
+v9.0.02 January 2009
+        *** Bug fixes ***
+        1. Keyword Me was handled incorrectly when tlbinf32.dll was 
+           included in analysis. (Sergey Likhoded)
+        2. Support for <System.Runtime.CompilerServices.Extension()>
+           was missing. (Anko Groenewegen)
+        3. Extension method that extends an unknown type is marked as
+           live method to prevent a false dead code alarm.
+        4. Fixed XML handling bug with VB2008 causing a hang/crash.
+           Bug happened with syntax like <%= .<tag>.Value %>
+           (Conrad Reynolds)
+
+v9.0.01 October 2008
+        *** Improvements and new features ***
+        1. Support for Visual Basic 2008.
+        2. Export source code as PDF.
+        3. Project Printer generates source documentation as PDF.
+        4. View contents of COM and DLL files as pseudo-code.
+        5. View binary files with built-in hex viewer.
+        6. Analyze all source files in a sub-directory tree. Analyze
+           projects without a .vbproj or a .sln file.
+        7. Module list report classifies modules into groups such as
+           Definitions, Interface, Abstract class, Concrete class, 
+           Stateless class, Dialog, Standard module and the like.
+           Useful for learning to understand an existing project.
+        8. <Flaw finder> set of code review rules helps locate logical
+           mistakes and omissions and prevent future errors.
+
+        *** New code review rules ***
+        Rules marked with (*) can be fixed via auto-fix.
+        -  Hard-coded path found
+        -  RaiseEvent fails via constructor
+        -  Enum missing zero value
+        -  Enum with duplicate value
+        -  Trailing comment found *
+        -  Line too long *
+        -  ReDim without Dim *
+        -  For index variable not local
+        -  Write-only property found
+        -  Cyclic recursion found
+        -  Declare contains ordinal number
+        -  File with several classes or modules
+        -  Implicit variable
+        -  Shared constructor decreases performance
+        -  Parent class inherited only once
+        -  Data-only class found
+        -  Dataless class found
+        -  Shared-only class instantiated
+        -  NotInheritable expected
+        -  CVDate found, use CDate
+        -  Dead parameter
+        -  ByVal parameter not read
+        -  Variable users all dead
+        -  Variable readers all dead
+        -  Variable writers all dead
+        -  Variable not read, writers all dead
+        -  Variable not written, readers all dead
+        -  Type field users all dead
+        -  Type field readers all dead
+        -  Type field writers all dead
+        -  Type field not read, writers all dead
+        -  Type field not written, readers all dead
+        -  Constant users all dead
+        -  Enum constant users all dead
+        -  Type users all dead
+        -  Enum users all dead
+        -  Enum constant expected
+        -  Type inference used
+        -  Optional parameter in exposed procedure
+        -  Interface ambiguous
+        -  Interface duplicated
+        -  MustInherit class missing MustOverride methods
+        -  MustInherit class inherits concrete class
+        -  MustOverride overrides concrete procedure
+        -  Shared expected
+        -  Multiple Return statements found
+        -  ReadOnly variable expected
+        -  Octal number found
+        -  Case branch(es) missing for Enum
+        -  Condition always True or False
+        -  Case useless
+        -  Case overlap
+
+        *** Improved features ***
+        1. Unicode support for international characters was added to:
+           - Hypertext view
+           - Reports (Display, HTML, MHT, RTF)
+           - PDF reports (Latin-based, Greek and Cyrillic characters)
+           - Copy to Clipboard (RTF)
+           - Export code (RTF, HTML, Unicode text)
+           - Project Metrics
+        2. Option to load international source in a different codepage.
+        3. Report enhancements:
+           - Variables and constants report rewritten for clarity.
+             Added underlying numeric constant values.
+           - Variable use report shows variable deadness status.
+           - File sizes and dates report shows line count and file age.
+           - Library report shows image base addresses for optimizing 
+             the base address of your library projects.
+           - Dictionary report displays new statistics on names.
+        4. PDF reports greatly improved.
+        5. Image version and compile time displayed for library files.
+        6. Syntax formatting for .sln files in hypertext and print-outs.
+        7. Find window improved:
+           - Results displayed in an easier-to-read format
+           - Option to search for "Code or String" (Klaus Lair)
+        8. Print code: New option "Bracket structures" emphasizes
+           conditionals and loops. (Trevor Tregellas)
+        9. Auto-fix now preserves existing line continuation characters
+           (_) when possible. A continued line gets reformatted only
+           when the particular line is auto-fixed.
+        10.Analyze several directory trees by creating a .lst file.
+        11.Compatibility library detected for classic VB projects.
+
+        *** VB2008 support details ***
+        1. Option Infer
+        2. Extension methods: <Extension()>
+        3. Nullable types
+        4. Object initializers: New With { .field=value }
+        5. <InternalsVisibleTo> attribute
+        6. Lambda expressions: Function(x). Partial support.
+        7. LINQ
+        8. WPF/XAML projects
+        9. If() function
+
+        *** Improved analysis ***
+        1. Added support for single-line Type and Enum blocks.
+           (Les Sullivan)
+        2. Classic VB: Added support for single-line declarations such
+           as Dim x:Dim y or Sub x:End Sub.
+        3. Added support for date literals #10/5/2008 11:25:00#
+        4. Arrays declared with ReDim (without Dim) are now detected 
+           in classic VB.
+        5. Support for generic Structure and Interface (Of T)
+        6. Support for Structures implementing an Interface.
+        7. Overloads resolution improved. The correct Overloads
+           procedure is now picked more often.
+        8. Accuracy of late-bound call resolution improved by taking
+           account the number of call arguments. (idea by Steve Gilbert)
+        9. COM procedures. If an Optional parameter has an Enum data
+           type and a default value, the name of the respective Enum
+           constant is displayed as the default.
+
+        *** Problem detection improvements ***
+        1. Option to Ignore dead Property Get/Set/Let if another one
+           lives. This option allows read&write properties even if read
+           or write is dead. (Ian Digby)
+        2. Special warning for an empty procedure when it Overrides
+           an ancestor class procedure. Empty Overrides deletes
+           functionality of an ancestor class, which is bad class
+           design.
+        3. Unused file problem is enhanced in a multi-project analysis. 
+           It now verifies use for each project separately. You can
+           then exclude the file from some projects and keep it in those
+           projects where it is used.
+        4. Option to switch Dead parameter rule on/off.
+           (idea by Jean-François Ménard)
+        5. Overrides procedures are not subject to NameCheck, since
+           their name is defined in an ancestor class. (Alex Mauer)
+        6. Microsoft.VisualBasic imported rule checks project-level
+           imports in addition to Imports statements. (Eric Burdo)
+        7. More accurate rules for Excess Scope problem (classic VB).
+
+        *** Performance improvements ***
+        1. Reduced analysis time at end of phase 2/2.
+        2. Faster processing of overly large Enums (such as 9000 lines).
+        3. Project Metrics Viewer loads large .mtx files faster.
+
+        *** Bug fixes ***
+        1. Fixed Unicode character width problems in "Print code"
+           feature.
+        2. "Initializer missing for variable" is not reported for arrays
+           with defined bounds. Cannot be initialize them. (Alex Mauer)
+        3. Fixed bug where calls to Events declared "As EventHandler" 
+           were not found from implementing classes. This lead to extra 
+           "Event not raised" warnings. (Charles Loreja)
+        4. Fixed crash reading some OCX properties. (Chaudier Guillaume)
+        5. Fixed bug where COM analysis ignored files with LCID<>0 in a 
+           VB 2002/2003 project. Sample file: XL5EN32.OLB.
+        6. Fixed .NET startup form being reported as dead.
+        7. The rule Option Strict missing was accidentally labeled 
+           Option Strict Off in Problem Options. The rule considers 
+           that an Option Strict Off statement is intentional, not a
+           problem. A problem is triggered when project-level Option
+           Strict is Off and there is no Option Strict statement in a
+           file. To search for any Option Strict Off statements, do 
+           a simple Find.
+        8. Support added for Shared Event and Shared Custom Event.
+        9. Fixed Save WMF/EMF in Project Graph.
+        10.Added missing support for ReadOnly variables.
+        11.Added missing support for Sub New in a Module.
+        12.Added missing support for generic procedures (Of T)
+        13.FRX file viewer did not always save icons and cursors 
+           correctly. (Jan Polonský)
+        14.Scope declaration missing no longer reported for a Shared 
+           Sub New, because it you can't declare one. (Alex Mauer)
+        15.Fixed dead code detection with Type fields declared As New.
+        16.Dictionary report showed too low Unique names count.
+        17.Fixed display problems with line continuation characters, 
+           especially in Hypertext view, code print-outs and 
+           Project Printer.
+        18.Reduced flickering in Hypertext and Report views.
+        19.Fixed crash in Enterprise Diagrams, File belongs to project
+           diagram when analyzing a project directory without a 
+           project file. (Richard Hurst)
+        20.Saving metrics as a .xml file produced invalid XML for
+           characters beyond Unicode &H7FFF (such as in Japanese).
+        21.Fixed handling of keyword New in Dim x, y As New datatype.
+        22.Fixed unnecessary warnings for IIf() and Choose() function.
+        23.Fixed parameter <DLLImport Charset:=..  > 
+        24.Fixed sorting, then double-clicking in Find window.
+        25.Fixed autofix: If all variables in a Structure are dead, 
+           don't removes them. A Structure without variables is illegal.
+        26.Fixed autofix: Adding return typename to property named P.
+        27.Fixed autofix: Don't remove dead Interface procedures if
+           they are implemented. VB.NET refuses to compile implementor.
+        28.Fixed autofix: Don't remove Overrides base procedures or
+           children of MustOverride when required to compile.
+
+        *** Code review rule changes ***
+        1. Classification changes
+         - Return value discarded: Style -> Dead code
+         - Variable/function/constant missing type declaration:
+           Optimization -> Style
+         - Case Else missing: Style -> Functionality
+        2. "Case Else missing" now reported at Select Case line.
+           Move any '$PROBHIDE CASE_ELSE next to Select Case.
+           Case Else is no longer required if existing Case branches 
+           cover all theoretically possible input values.
+
+        *** VB.NET Compatibility Check changes ***
+        1. Rules updated to cover upgrading code from VB6 to VB2008, 
+           with Visual Basic Power Packs 3.0 installed.
+        2. Removed compatibility rules (and reason why removed):
+           - Circle and Oval controls unsupported (use Power Packs)
+           - No control arrays (automated upgrade now available)
+           - vbAlias unavailable (replacement available)
+           - ByVal/ByRef missing (upgrade wizard works correctly now)
+             (feedback by Torsten Borg)
+
+        *** Metrics changes ***
+        1. TCC for classes includes Custom Event accessors. May increase
+           slightly.
+        2. Values of SC, SYSC and RSYSC may have changed significantly 
+           due to improved analysis.
+
+        *** VBA Plug changes ***
+        1. VBA Plug v2 is required for Project Analyzer v9. 
+           Old version VBA Plug v1 is no longer compatible.
+        2. Command line option /Q quits VBA Plug after export.
+           (Sven Wittorf)
+
+        *** Removed features ***
+        1. Project Analyzer no longer supports Windows 95 or NT.
+           It may work, but support is not maintained.
+
+
+
+
+Copyright Aivosto Oy 
+www.aivosto.com
+

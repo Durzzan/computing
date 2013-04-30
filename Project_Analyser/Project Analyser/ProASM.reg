@@ -1,0 +1,57 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\Record\{EE3ADBB7-AE6D-490C-9B50-AD581FFE0B9C}\1.0.0.0]
+"Class"="ProASM.ENETScope"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\Record\{E2FDEC51-8FDC-425A-A334-C5C5D1632283}\1.0.0.0]
+"Class"="ProASM.ENETProcType"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\Record\{E58CFC18-40B2-48EA-ABAE-25A79FEBDD52}\1.0.0.0]
+"Class"="ProASM.ENETModuleType"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\Record\{EF357219-56EF-44FB-A76D-394224B2680A}\1.0.0.0]
+"Class"="ProASM.ENETMethodInfo"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\Record\{E42E7195-B4D3-4540-B2F5-F9D8FB3CA56B}\1.0.0.0]
+"Class"="ProASM.ENETModuleInfo"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\Record\{E45A67EB-D6CB-4005-BDE6-6E98530C1A84}\1.0.0.0]
+"Class"="ProASM.ENETVariableInfo"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\ProASM.NETAssemblyLoader]
+@="ProASM.NETAssemblyLoader"
+
+[HKEY_CLASSES_ROOT\ProASM.NETAssemblyLoader\CLSID]
+@="{C4D76B79-4176-4815-B9E7-99F07D68CABD}"
+
+[HKEY_CLASSES_ROOT\CLSID\{C4D76B79-4176-4815-B9E7-99F07D68CABD}]
+@="ProASM.NETAssemblyLoader"
+
+[HKEY_CLASSES_ROOT\CLSID\{C4D76B79-4176-4815-B9E7-99F07D68CABD}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="ProASM.NETAssemblyLoader"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\CLSID\{C4D76B79-4176-4815-B9E7-99F07D68CABD}\InprocServer32\1.0.0.0]
+"Class"="ProASM.NETAssemblyLoader"
+"Assembly"="ProASM, Version=1.0.0.0, Culture=neutral, PublicKeyToken=7ddc4273a995605a"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CLASSES_ROOT\CLSID\{C4D76B79-4176-4815-B9E7-99F07D68CABD}\ProgId]
+@="ProASM.NETAssemblyLoader"
+
+[HKEY_CLASSES_ROOT\CLSID\{C4D76B79-4176-4815-B9E7-99F07D68CABD}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
